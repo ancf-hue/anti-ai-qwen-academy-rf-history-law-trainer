@@ -1,0 +1,1822 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="dark">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<title>Анти-ИИ Квен Академия | История России • Законодательство РФ • 2026</title>
+<meta name="description" content="Тренажёр по истории России и основам законодательства РФ для экзамена с целью приобретения гражданства РФ. 36 заданий, 40 первичных баллов, порог 28." />
+<link rel="icon" href="favicon.ico" type="image/x-icon" />
+<style>
+  * { box-sizing: border-box; }
+  :root, [data-theme="dark"] {
+    --bg: #1a1405;
+    --bg-grad1: rgba(250, 204, 21, 0.18);
+    --bg-grad2: rgba(234, 179, 8, 0.12);
+    --card: rgba(40, 32, 8, 0.85);
+    --card-soft: rgba(250, 204, 21, 0.08);
+    --border: rgba(250, 204, 21, 0.3);
+    --border-strong: rgba(250, 204, 21, 0.6);
+    --text: #fefce8; --text-soft: #fef08a; --muted: #fde047;
+    --accent: #facc15; --accent2: #eab308; --accent-text: #422006;
+    --light-yellow: rgba(250, 204, 21, 0.15);
+    --yellow: #facc15; --orange: #f59e0b;
+    --green: #10b981; --green-light: rgba(16, 185, 129, 0.15); --green-border: rgba(16, 185, 129, 0.4);
+    --blue: #3b82f6; --blue-light: rgba(59, 130, 246, 0.15);
+    --red: #ef4444; --red-light: rgba(239, 68, 68, 0.15);
+    --shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
+    --header-bg: rgba(26, 20, 5, 0.95);
+  }
+  [data-theme="light"] {
+    --bg: #fffbeb;
+    --bg-grad1: rgba(250, 204, 21, 0.15);
+    --bg-grad2: rgba(234, 179, 8, 0.08);
+    --card: #ffffff;
+    --card-soft: #fefce8;
+    --border: #fde68a;
+    --border-strong: #facc15;
+    --text: #422006; --text-soft: #713f12; --muted: #a16207;
+    --accent: #ca8a04; --accent2: #a16207; --accent-text: #ffffff;
+    --light-yellow: #fef9c3;
+    --yellow: #eab308; --orange: #d97706;
+    --green: #059669; --green-light: #dcfce7; --green-border: #bbf7d0;
+    --blue: #2563eb; --blue-light: #dbeafe;
+    --red: #dc2626; --red-light: #fee2e2;
+    --shadow: 0 4px 12px rgba(202, 138, 4, 0.12);
+    --header-bg: rgba(255, 255, 255, 0.95);
+  }
+  body { margin: 0; font-family: system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+    background: radial-gradient(circle at top left,var(--bg-grad1),transparent 30%),
+                radial-gradient(circle at top right,var(--bg-grad2),transparent 28%),var(--bg);
+    color: var(--text); line-height: 1.55; min-height: 100vh; transition: background-color 0.3s, color 0.3s; }
+  .container { width: min(1200px, 94%); margin: 0 auto; }
+  header { position: sticky; top: 0; z-index: 50; backdrop-filter: blur(14px); background: var(--header-bg); border-bottom: 1px solid var(--border); }
+  .topbar { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 12px 0; flex-wrap: wrap; }
+  .brand { display: flex; align-items: center; gap: 12px; }
+  .brand-logo { width: 44px; height: 44px; border-radius: 14px; object-fit: cover; background: var(--light-yellow); border: 1px solid var(--border-strong); flex: 0 0 auto; }
+  .brand strong { display: block; font-size: 15px; line-height: 1.2; }
+  .brand small { color: var(--muted); font-size: 11px; }
+  nav { display: flex; gap: 14px; flex-wrap: wrap; }
+  nav a { color: var(--text-soft); text-decoration: none; font-weight: 700; font-size: 13px; transition: color 0.2s; }
+  nav a:hover { color: var(--accent); }
+  .top-controls { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; margin-left: auto; }
+  .icon-btn { display: inline-flex; align-items: center; gap: 5px; border: 1px solid var(--border-strong); background: var(--light-yellow); color: var(--muted); border-radius: 999px; padding: 7px 11px; font-weight: 800; cursor: pointer; font-size: 12px; transition: all .2s; }
+  .icon-btn:hover { background: var(--card-soft); color: var(--accent); transform: translateY(-1px); }
+  .lang-option { opacity: .6; } .lang-option.active { opacity: 1; color: var(--accent); }
+  .timer-widget { display: flex; align-items: center; gap: 5px; background: var(--light-yellow); border: 1px solid var(--border-strong); border-radius: 12px; padding: 5px 7px; }
+  #timerDisplay { font-variant-numeric: tabular-nums; font-weight: 900; min-width: 80px; text-align: center; font-size: 13px; }
+  .timer-btn { border: 0; background: var(--card-soft); color: var(--text); border-radius: 9px; padding: 5px 8px; cursor: pointer; font-size: 13px; }
+  .timer-btn:hover { background: var(--light-yellow); }
+  .timer-widget.warning #timerDisplay { color: var(--orange); }
+  .timer-widget.danger #timerDisplay { color: var(--red); animation: pulse 1s infinite; }
+  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.5} }
+  .variant-bar { background: var(--card-soft); border-bottom: 1px solid var(--border); padding: 10px 0; position: sticky; top: 66px; z-index: 45; backdrop-filter: blur(10px); }
+  .variant-row { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+  .variant-label { font-size: 13px; font-weight: 800; color: var(--muted); }
+  .variant-btn { padding: 8px 14px; border-radius: 10px; border: 1px solid var(--border-strong); background: var(--light-yellow); color: var(--text); cursor: pointer; font-size: 13px; font-weight: 800; transition: all .2s; }
+  .variant-btn:hover { background: var(--card-soft); transform: translateY(-1px); }
+  .variant-btn.active { background: linear-gradient(135deg,var(--accent2),var(--accent)); color: var(--accent-text); border-color: transparent; }
+  .mode-toggle { display: flex; gap: 4px; margin-left: auto; background: var(--card-soft); border: 1px solid var(--border); border-radius: 10px; padding: 3px; }
+  .mode-btn { padding: 6px 12px; border-radius: 8px; border: 0; background: transparent; color: var(--text-soft); cursor: pointer; font-size: 12px; font-weight: 800; transition: all .2s; }
+  .mode-btn.active { background: var(--accent); color: var(--accent-text); }
+  .hero { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 24px; padding: 40px 0 24px; align-items: start; }
+  .badge { display: inline-flex; align-items: center; padding: 7px 12px; border-radius: 999px; background: var(--light-yellow); border: 1px solid var(--border-strong); color: var(--accent); font-size: 12px; font-weight: 700; }
+  h1 { font-size: clamp(28px, 4.2vw, 46px); line-height: 1.05; margin: 14px 0; }
+  h1 .accent { color: var(--accent); }
+  .lead { color: var(--text-soft); max-width: 72ch; font-size: 16px; }
+  .actions { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 20px; }
+  .btn { border: 0; border-radius: 13px; padding: 13px 18px; font-weight: 850; cursor: pointer; background: linear-gradient(135deg,var(--accent2),var(--accent)); color: var(--accent-text); box-shadow: 0 12px 30px rgba(250,204,21,.25); font-size: 14px; transition: all .2s; }
+  .btn:hover { transform: translateY(-2px); box-shadow: 0 16px 36px rgba(250,204,21,.3); }
+  .btn:active { transform: translateY(0); }
+  .btn.secondary { background: var(--light-yellow); border: 1px solid var(--border-strong); color: var(--text); box-shadow: none; }
+  .btn.small { padding: 9px 13px; font-size: 13px; border-radius: 11px; }
+  .btn:disabled { opacity: .5; cursor: not-allowed; transform: none; }
+  .panel { background: var(--card); border: 1px solid var(--border-strong); border-radius: 22px; padding: 20px; box-shadow: var(--shadow); }
+  .panel h3 { margin: 0 0 14px; font-size: 18px; }
+  .metrics { display: grid; grid-template-columns: repeat(3,1fr); gap: 10px; margin: 14px 0; }
+  .metric { background: var(--light-yellow); border-radius: 14px; padding: 12px; border: 1px solid var(--border); min-height: 76px; }
+  .metric strong { display: block; font-size: 20px; margin-bottom: 3px; font-variant-numeric: tabular-nums; }
+  .metric span { color: var(--muted); font-size: 11px; }
+  .metric.blue { background: var(--blue-light); border-color: var(--blue); }
+  .metric.green { background: var(--green-light); border-color: var(--green-border); }
+  progress { width: 100%; height: 10px; border-radius: 999px; overflow: hidden; appearance: none; background: var(--light-yellow); border: none; margin-top: 10px; }
+  progress::-webkit-progress-bar { background: var(--light-yellow); border-radius: 999px; }
+  progress::-webkit-progress-value { background: linear-gradient(90deg,var(--accent2),var(--accent)); border-radius: 999px; transition: width .4s; }
+  .note { color: var(--muted); font-size: 12px; margin-top: 10px; }
+  section { padding: 26px 0; scroll-margin-top: 130px; }
+  .section-head { display: flex; justify-content: space-between; align-items: end; gap: 16px; margin-bottom: 16px; flex-wrap: wrap; }
+  h2 { font-size: clamp(22px,2.8vw,32px); margin: 0; line-height: 1.15; }
+  .sub { color: var(--muted); margin: 5px 0 0; font-size: 14px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(245px,1fr)); gap: 14px; }
+  .card { background: var(--card); border: 1px solid var(--border); border-radius: 20px; padding: 18px; box-shadow: var(--shadow); transition: all .2s; }
+  .card:hover { transform: translateY(-2px); }
+  .card h3 { margin: 0 0 8px; font-size: 18px; }
+  .card p { color: var(--text-soft); margin: 0 0 14px; font-size: 14px; }
+  .warn-card { border-color: rgba(245,158,11,.4); } .danger-card { border-color: rgba(239,68,68,.4); } .success-card { border-color: var(--green-border); }
+  .tag { display: inline-block; padding: 5px 10px; border-radius: 999px; font-size: 11px; font-weight: 850; margin-bottom: 8px; background: var(--light-yellow); border: 1px solid var(--border-strong); color: var(--accent); }
+  .tag.red { background: rgba(239,68,68,.14); border-color: rgba(239,68,68,.4); color: var(--red); }
+  .tag.green { background: var(--green-light); border-color: var(--green-border); color: var(--green); }
+  .tag.orange { background: rgba(245,158,11,.14); border-color: rgba(245,158,11,.4); color: var(--orange); }
+  .tag.blue { background: var(--blue-light); border-color: var(--blue); color: var(--blue); }
+  .mini-list { margin: 0; padding-left: 18px; color: var(--text-soft); font-size: 13px; }
+  .mini-list li { margin: 6px 0; }
+  .filter-bar { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; padding: 12px; background: var(--card-soft); border: 1px solid var(--border); border-radius: 14px; align-items: center; }
+  .filter-bar > span { color: var(--muted); font-size: 12px; font-weight: 700; margin-right: 4px; }
+  .filter-btn { padding: 7px 12px; border-radius: 9px; border: 1px solid var(--border-strong); background: var(--light-yellow); color: var(--text); cursor: pointer; font-size: 12px; font-weight: 700; transition: all .2s; }
+  .filter-btn:hover { background: var(--card-soft); }
+  .filter-btn.active { background: linear-gradient(135deg,var(--accent2),var(--accent)); border-color: transparent; color: var(--accent-text); }
+  .question-block { background: var(--card); border: 1px solid var(--border); border-radius: 22px; padding: 22px; margin-bottom: 20px; box-shadow: var(--shadow); animation: slideIn .3s; }
+  @keyframes slideIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+  .q-number { display: inline-block; padding: 5px 11px; border-radius: 999px; background: var(--light-yellow); border: 1px solid var(--border-strong); color: var(--accent); font-size: 12px; font-weight: 850; margin-bottom: 12px; }
+  .q-part { margin-bottom: 16px; }
+  .q-part-label, .q-trainer-label { display: inline-block; font-size: 11px; font-weight: 900; text-transform: uppercase; letter-spacing: .5px; color: var(--accent); margin-bottom: 6px; }
+  .q-text { font-size: 15px; font-weight: 700; margin: 0; line-height: 1.55; white-space: pre-wrap; }
+  .q-info { background: var(--light-yellow); border-left: 4px solid var(--accent); border-radius: 0 12px 12px 0; padding: 14px 16px; margin: 16px 0; color: var(--text-soft); font-size: 14px; line-height: 1.55; white-space: pre-wrap; }
+  .options { display: grid; gap: 8px; }
+  .option { text-align: left; width: 100%; background: var(--card-soft); border: 1px solid var(--border); color: var(--text); border-radius: 12px; padding: 13px 15px; cursor: pointer; font-size: 14px; transition: all .15s; display: flex; align-items: flex-start; gap: 10px; }
+  .option:hover:not(:disabled) { background: var(--light-yellow); border-color: var(--border-strong); transform: translateX(3px); }
+  .option.correct { background: rgba(16,185,129,.18); border-color: var(--green); }
+  .option.wrong { background: rgba(239,68,68,.18); border-color: var(--red); }
+  .option:disabled { cursor: default; }
+  .option-check { width: 18px; height: 18px; accent-color: var(--accent); cursor: pointer; flex: 0 0 auto; margin-top: 2px; }
+  .option-label { flex: 1; cursor: pointer; }
+  .multi-hint { font-size: 12px; color: var(--muted); margin-bottom: 8px; font-weight: 700; }
+  .writing-area { margin-top: 12px; }
+  .writing-area textarea { width: 100%; padding: 13px 15px; border-radius: 11px; border: 1px solid var(--border-strong); background: var(--card-soft); color: var(--text); font-size: 14px; font-family: inherit; resize: vertical; min-height: 180px; line-height: 1.6; transition: all .2s; }
+  .writing-area textarea:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px var(--light-yellow); }
+  .result-block { margin-top: 12px; padding: 13px 15px; border-radius: 12px; animation: slideIn .3s; }
+  .result-block.correct { background: var(--light-yellow); border: 1px solid var(--border-strong); }
+  .result-block.wrong { background: rgba(239,68,68,.1); border: 1px solid rgba(239,68,68,.4); }
+  .verdict { font-size: 16px; font-weight: 900; margin-bottom: 6px; }
+  .verdict.correct { color: var(--green); } .verdict.wrong { color: var(--red); }
+  .result-row { margin: 5px 0; color: var(--text-soft); font-size: 14px; }
+  .result-row strong { color: var(--text); }
+  .source-row { margin-top: 5px; color: var(--muted); font-size: 12px; }
+  .summary { background: var(--light-yellow); border: 1px solid var(--border-strong); border-radius: 22px; padding: 22px; text-align: center; margin-top: 22px; animation: slideIn .3s; }
+  .summary .score { font-size: 44px; font-weight: 950; color: var(--accent); font-variant-numeric: tabular-nums; }
+  .reset-bar { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 16px; justify-content: flex-end; }
+  .support-card { background: var(--card); border: 1px solid var(--border-strong); border-radius: 22px; padding: 22px; box-shadow: var(--shadow); text-align: center; }
+  .support-card h2 { margin-bottom: 8px; }
+  .support-card p { margin: 8px 0; color: var(--text-soft); }
+  .phone { color: var(--accent); font-weight: 900; text-decoration: none; border-bottom: 1px dashed var(--accent); }
+  .copy-status { margin-left: 6px; color: var(--accent); font-weight: 850; }
+  footer { padding: 26px 0 44px; color: var(--muted); text-align: center; border-top: 1px solid var(--border); margin-top: 26px; font-size: 13px; }
+  .reference-table { width: 100%; border-collapse: collapse; margin-top: 8px; font-size: 12px; }
+  .reference-table th, .reference-table td { border: 1px solid var(--border); padding: 6px; text-align: left; }
+  .reference-table th { background: var(--light-yellow); color: var(--accent); }
+  @media (max-width: 860px) {
+    .hero { grid-template-columns: 1fr; } .metrics { grid-template-columns: 1fr; }
+    nav { gap: 10px; font-size: 12px; }
+    .top-controls { width: 100%; justify-content: space-between; }
+    .variant-bar { position: static; }
+    .mode-toggle { margin-left: 0; width: 100%; justify-content: center; }
+  }
+  @media print {
+    header, nav, .top-controls, .actions, .reset-bar, .filter-bar, .variant-bar, footer, .support-card, .btn, .icon-btn { display: none !important; }
+    body { background: #fff; color: #000; }
+    .question-block, .card, .panel { break-inside: avoid; border: 1px solid #ccc; box-shadow: none; }
+  }
+</style>
+</head>
+<body>
+<header>
+  <div class="container topbar">
+    <div class="brand">
+      <img src="favicon.ico" class="brand-logo" alt="Anti-AI Qwen Academy" onerror="this.style.display='none'" />
+      <div>
+        <strong data-i18n="brandTitle">Анти-ИИ Квен Академия</strong>
+        <small data-i18n="brandSub">История России • Законодательство РФ • 2026</small>
+      </div>
+    </div>
+    <nav>
+      <a href="#structure" data-i18n="navStructure">Структура</a>
+      <a href="#trainer" data-i18n="navTrainer">Тренажёр</a>
+      <a href="#references" data-i18n="navRefs">Справочник</a>
+      <a href="#support" data-i18n="navSupport">Поддержать</a>
+    </nav>
+    <div class="top-controls">
+      <button id="themeToggle" class="icon-btn" type="button" aria-label="Theme"><span id="themeIcon">🌙</span></button>
+      <button id="langToggle" class="icon-btn" type="button" aria-label="Language">
+        <span class="lang-option active" data-lang="ru">RU</span><span>/</span><span class="lang-option" data-lang="en">EN</span>
+      </button>
+      <button class="icon-btn" type="button" title="Печать" onclick="window.print()">🖨</button>
+      <button class="icon-btn" type="button" title="Экспорт" onclick="exportResults()">💾</button>
+      <div class="timer-widget" id="timerWidget" role="group">
+        <span id="timerDisplay">01:30:00</span>
+        <button id="timerToggle" class="timer-btn" type="button">▶</button>
+        <button id="timerReset" class="timer-btn" type="button">↺</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="variant-bar">
+  <div class="container variant-row">
+    <span class="variant-label" data-i18n="variantLabel">Вариант:</span>
+    <div id="variantButtons" style="display:flex;gap:6px;flex-wrap:wrap;"></div>
+    <div class="mode-toggle" role="tablist">
+      <button class="mode-btn active" data-mode="training" onclick="setMode('training', this)" data-i18n="modeTraining">🎓 Тренировка</button>
+      <button class="mode-btn" data-mode="exam" onclick="setMode('exam', this)" data-i18n="modeExam">📝 Экзамен</button>
+      <button class="mode-btn" data-mode="review" onclick="setMode('review', this)" data-i18n="modeReview">🔁 Ошибки</button>
+    </div>
+  </div>
+</div>
+
+<main class="container">
+  <section class="hero">
+    <div>
+      <span class="badge" data-i18n="badge">36 заданий • 40 первичных баллов • порог 28</span>
+      <h1 data-i18n="h1">Тренажёр по <span class="accent">истории России и законодательству РФ</span> для гражданства</h1>
+      <p class="lead" data-i18n="lead">Полное соответствие спецификации КИМ ФИПИ 2026. 18 заданий по истории России (1–18) + 18 заданий по основам законодательства РФ (19–36). Максимум — 40 первичных баллов. Минимум для успешной сдачи — 28 баллов, в том числе: история ≥ 12, законодательство ≥ 12.</p>
+      <div class="actions">
+        <button class="btn" onclick="scrollToId('trainer')" data-i18n="actionTrainer">Пройти тест</button>
+        <button class="btn secondary" onclick="scrollToId('references')" data-i18n="actionRefs">Справочник</button>
+      </div>
+    </div>
+    <aside class="panel">
+      <h3 data-i18n="quickStats">Твой прогресс</h3>
+      <div class="metrics">
+        <div class="metric"><strong id="answeredCount">0/36</strong><span data-i18n="metricAnswered">заданий решено</span></div>
+        <div class="metric green"><strong id="correctCount">0</strong><span data-i18n="metricCorrect">правильных</span></div>
+        <div class="metric blue"><strong id="primaryScore">0/40</strong><span data-i18n="metricPrimary">первичных баллов</span></div>
+      </div>
+      <progress id="overall" value="0" max="100"></progress>
+      <p class="note" data-i18n="noteReset">Прогресс не сохраняется — каждая загрузка страницы начинается с нуля.</p>
+    </aside>
+  </section>
+
+  <section id="structure">
+    <div class="section-head"><div><h2 data-i18n="structureTitle">Структура КИМ</h2><p class="sub" data-i18n="structureSub">36 заданий: история России (1–18) + основы законодательства РФ (19–36).</p></div></div>
+    <div class="grid" id="structureGrid"></div>
+  </section>
+
+  <section id="trainer">
+    <div class="section-head">
+      <div>
+        <h2 data-i18n="trainerTitle">Тренажёр</h2>
+        <p class="sub" data-i18n="trainerSub">Задания 1–36. Выбери вариант сверху и режим работы.</p>
+      </div>
+    </div>
+    <div class="filter-bar">
+      <span data-i18n="filterShow">Показать:</span>
+      <button class="filter-btn active" data-filter="all" id="filterAll" onclick="setFilter('all', this)"></button>
+      <button class="filter-btn" data-filter="history" id="filterHistory" onclick="setFilter('history', this)"></button>
+      <button class="filter-btn" data-filter="law" id="filterLaw" onclick="setFilter('law', this)"></button>
+    </div>
+    <div class="reset-bar"><button class="btn secondary small" onclick="resetVariant()" data-i18n="resetVariant">Сбросить ответы варианта</button></div>
+    <div id="quizContainer"></div>
+    <div id="summaryBox"></div>
+  </section>
+
+  <section id="references">
+    <div class="section-head"><div><h2 data-i18n="refsTitle">Справочник и критерии</h2><p class="sub" data-i18n="refsSub">Шкала перевода + баллы по частям + нормативные акты.</p></div></div>
+    <div class="grid" id="refsGrid"></div>
+    <div class="card" style="margin-top:14px;">
+      <h3 data-i18n="refRules">Что нужно помнить на экзамене</h3>
+      <ul class="mini-list" id="refRulesList"></ul>
+    </div>
+  </section>
+
+  <section id="support">
+    <div class="support-card">
+      <h2 data-i18n="supportTitle">🤝 ПОДДЕРЖАТЬ ПРОЕКТ ❤️</h2>
+      <p data-i18n="supportP1"><strong>Приложение бесплатное. Было и останется.</strong></p>
+      <p data-i18n="supportP2">Все приложения бесплатны и без рекламы. Ваша помощь развивает офлайн-безопасность и образование.</p>
+      <p>
+        <span data-i18n="supportPhoneLabel">📱 ПЕРЕВОД ПО НОМЕРУ:</span>
+        <a class="phone" href="tel:89202275676">8-920-227-56-76</a>
+        <button class="btn small" onclick="copyPhone()" data-i18n="copyPhone">📋 Копировать</button>
+        <span id="copyStatus" class="copy-status" aria-live="polite"></span>
+      </p>
+      <p data-i18n="supportP3">✅ Мгновенно. Без комиссии. Безопасно.</p>
+      <p data-i18n="supportP4">❤️ Спасибо за поддержку!</p>
+      <p>🌟 👉 <a href="https://ancf-hue.github.io/" target="_blank" rel="noopener noreferrer" style="color:var(--accent);font-weight:800;text-decoration:none;" data-i18n="supportCatalog">Каталог офлайн-приложений Anti-AI Shield</a></p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container" data-i18n="footer">Анти-ИИ Квен Академия • История России и законодательство РФ • 2026</div>
+</footer>
+
+<script>
+/* ============================================================
+   STATE
+============================================================ */
+let currentLang = "ru";
+let currentTheme = "dark";
+let currentVariant = "A";
+let currentMode = "training";
+let currentFilter = "all";
+let savedAnswers = {};
+
+function answerKey(qid) { return currentVariant + "_" + qid; }
+function getAnswer(qid) { return savedAnswers[answerKey(qid)]; }
+function setAnswer(qid, val) { savedAnswers[answerKey(qid)] = val; }
+function escapeHtml(str) {
+  return String(str).replace(/[&<>"']/g, m => ({ "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;" }[m]));
+}
+function scrollToId(id) { const el = document.getElementById(id); if (el) el.scrollIntoView({ behavior: "smooth", block: "start" }); }
+function loc(obj) { return obj && obj[currentLang] !== undefined ? obj[currentLang] : (obj && obj.ru !== undefined ? obj.ru : ""); }
+
+/* ============================================================
+   I18N
+============================================================ */
+const I18N = {
+  ru: {
+    docTitle: "Анти-ИИ Квен Академия | История России • Законодательство РФ • 2026",
+    brandTitle: "Анти-ИИ Квен Академия", brandSub: "История России • Законодательство РФ • 2026",
+    navStructure: "Структура", navTrainer: "Тренажёр", navRefs: "Справочник", navSupport: "Поддержать",
+    badge: "36 заданий • 40 первичных баллов • порог 28",
+    h1: 'Тренажёр по <span class="accent">истории России и законодательству РФ</span> для гражданства',
+    lead: "Полное соответствие спецификации КИМ ФИПИ 2026. 18 заданий по истории России (1–18) + 18 заданий по основам законодательства РФ (19–36). Максимум — 40 первичных баллов. Минимум для успешной сдачи — 28 баллов, в том числе: история ≥ 12, законодательство ≥ 12.",
+    actionTrainer: "Пройти тест", actionRefs: "Справочник",
+    quickStats: "Твой прогресс", metricAnswered: "заданий решено", metricCorrect: "правильных", metricPrimary: "первичных баллов",
+    noteReset: "Прогресс не сохраняется — каждая загрузка страницы начинается с нуля.",
+    variantLabel: "Вариант:", modeTraining: "🎓 Тренировка", modeExam: "📝 Экзамен", modeReview: "🔁 Ошибки",
+    structureTitle: "Структура КИМ", structureSub: "36 заданий: история России (1–18) + основы законодательства РФ (19–36).",
+    trainerTitle: "Тренажёр", trainerSub: "Задания 1–36.",
+    filterShow: "Показать:", filterAll: "Все", filterHistory: "История России (1–18)", filterLaw: "Основы законодательства (19–36)",
+    resetVariant: "Сбросить ответы варианта",
+    refsTitle: "Справочник и критерии", refsSub: "Шкала перевода + баллы по частям + нормативные акты.", refRules: "Что нужно помнить на экзамене",
+    supportTitle: "🤝 ПОДДЕРЖАТЬ ПРОЕКТ ❤️", supportP1: "<strong>Приложение бесплатное. Было и останется.</strong>",
+    supportP2: "Все приложения бесплатны и без рекламы. Ваша помощь развивает офлайн-безопасность и образование.",
+    supportPhoneLabel: "📱 ПЕРЕВОД ПО НОМЕРУ:", copyPhone: "📋 Копировать", copied: "✓ Скопировано",
+    supportP3: "✅ Мгновенно. Без комиссии. Безопасно.", supportP4: "❤️ Спасибо за поддержку!",
+    supportCatalog: "Каталог офлайн-приложений Anti-AI Shield",
+    footer: "Анти-ИИ Квен Академия • История России и законодательство РФ • 2026",
+    resultCorrect: "✅ Правильно!", resultWrong: "❌ Ошибка.",
+    correctAnswer: "Правильный ответ:", explanation: "Пояснение:", source: "Источник:",
+    summaryAnswered: "Пройдено:", summaryOf: "из", summaryCorrect: "Правильных:",
+    summaryFinish: "Ответь на все задания, чтобы увидеть итог.",
+    verdictExcellent: "Отличный результат! Ты готов к экзамену!", verdictGood: "Хорошо, но повтори ошибки.", verdictNeeds: "Нужно потренироваться ещё.",
+    resetConfirm: "Сбросить все ответы?", copyFail: "Не удалось скопировать. Номер: ",
+    questionLabel1: "1. Задание", questionLabel2: "2. Подсказка", questionLabel3: "3. Твой ответ",
+    levelShort: "Краткий ответ", levelLong: "Развёрнутый ответ",
+    sourceShort: "ФИПИ 2026, задание {task}", sourceLong: "ФИПИ 2026, задание {task}",
+    timerUp: "Время вышло!",
+    matchPlaceholder: "Впиши ответ", matchCheck: "Проверить", showSolution: "Показать ответ",
+    multiHint: "Выберите все правильные ответы (их несколько)",
+    exportDone: "✓ Файл сохранён",
+    reviewEmpty: "🎉 Ошибок нет! Отличная работа.",
+    reviewEmptyHint: "Реши задания в тренировке или экзамене, чтобы появились ошибки.",
+    sectionHistory: "История России (1–18)", sectionLaw: "Основы законодательства РФ (19–36)",
+    refsScaleTitle: "Шкала перевода", refsScaleColPoints: "Баллы", refsScaleColResult: "Результат",
+    refsScalePass: "28–40", refsScaleFail: "0–27", refsScalePassLabel: "✅ Тест пройден", refsScaleFailLabel: "❌ Тест не пройден",
+    refsScaleNote: "Из 28 баллов: история ≥ 12, законодательство ≥ 12.",
+    refsMax: "Итого",
+    refsPartsTitle: "Баллы по частям", refsPartsColPart: "Часть", refsPartsColMax: "Максимум",
+    refsPartHistory: "История России (1–18)", refsPartLaw: "Основы законодательства РФ (19–36)",
+    refsTaskScoresTitle: "Баллы за отдельные задания",
+    refsTaskScoresColTask: "Задание", refsTaskScoresColScore: "Балл",
+    refsTask11: "11. Развёрнутый ответ", refsTask18: "18. Развёрнутый ответ", refsTask33: "33. Развёрнутый ответ",
+    refsTask22: "22. Краткий ответ (2 балла)",
+    refsTaskOther: "Остальные (1–10, 12–17, 19–21, 23–32, 34–36)",
+    refsNormsTitle: "Нормативные акты",
+    refsNormsColArea: "Область", refsNormsColAct: "Нормативный акт",
+    refsNormConstitution: "Конституционный строй", refsNormConstitutionVal: "Конституция РФ, ст. 1–16",
+    refsNormCivil: "Гражданское право", refsNormCivilVal: "ГК РФ, ст. 1, 2, 10–12, 17–24, 35–40, 128, 153–165, 209–218, 307, 309, 329, 393, 420, 1064, 1099–1101",
+    refsNormLabor: "Трудовое право", refsNormLaborVal: "ТК РФ, ст. 2–4, 15, 16, 20, 21, 56–60, 65, 77, 81, 83, 192",
+    refsNormFamily: "Семейное право", refsNormFamilyVal: "СК РФ, ст. 1, 2, 10–14, 16–18, гл. 7, 8",
+    refsNormCitizenship: "Гражданство", refsNormCitizenshipVal: "ФЗ от 28.04.2023 № 138-ФЗ, ст. 14–18, 21–26",
+    refsNormMigration: "Миграционный учёт", refsNormMigrationVal: "ФЗ от 18.07.2007 № 109-ФЗ; ПП РФ от 15.01.2007 № 9",
+    refsNormEntry: "Въезд и выезд", refsNormEntryVal: "ФЗ от 15.08.1996 № 114-ФЗ, ст. 24, 25.8, 25.10, 25.16",
+    refsNormDocs: "Документы для проживания", refsNormDocsVal: "Приказ МВД России от 10.12.2020 № 856, п. 35–37",
+    refRulesList: [
+      "Внимательно читай инструкцию к каждому заданию.",
+      "Задания 1–10, 12–17, 19–21, 23–32, 34–36 — краткий ответ (1 балл).",
+      "Задание 22 — краткий ответ, оценивается 2 баллами.",
+      "Задания 11, 18, 33 — развёрнутый письменный ответ (по 2 балла).",
+      "Порог: 28 из 40, при этом история ≥ 12 и законодательство ≥ 12.",
+      "Максимальная продолжительность экзамена — 90 минут."
+    ]
+  },
+  en: {
+    docTitle: "Anti-AI Qwen Academy | Russian History • RF Law • 2026",
+    brandTitle: "Anti-AI Qwen Academy", brandSub: "Russian History • RF Law • 2026",
+    navStructure: "Structure", navTrainer: "Trainer", navRefs: "Reference", navSupport: "Support",
+    badge: "36 tasks • 40 primary points • threshold 28",
+    h1: 'Trainer for <span class="accent">Russian history and RF legislation</span> for citizenship',
+    lead: "Full compliance with FIPI 2026 KIM specification. 18 tasks on Russian history (1–18) + 18 tasks on RF legislation basics (19–36). Max — 40 primary points. Minimum to pass — 28 points, including: history ≥ 12, law ≥ 12.",
+    actionTrainer: "Start test", actionRefs: "Reference",
+    quickStats: "Your progress", metricAnswered: "tasks solved", metricCorrect: "correct", metricPrimary: "primary points",
+    noteReset: "Progress is not saved — every page reload starts from scratch.",
+    variantLabel: "Variant:", modeTraining: "🎓 Training", modeExam: "📝 Exam", modeReview: "🔁 Mistakes",
+    structureTitle: "KIM structure", structureSub: "36 tasks: Russian history (1–18) + RF legislation (19–36).",
+    trainerTitle: "Trainer", trainerSub: "Tasks 1–36.",
+    filterShow: "Show:", filterAll: "All", filterHistory: "Russian history (1–18)", filterLaw: "RF legislation (19–36)",
+    resetVariant: "Reset variant",
+    refsTitle: "Reference & criteria", refsSub: "Scale + points per part + legal acts.", refRules: "What to remember",
+    supportTitle: "🤝 SUPPORT ❤️", supportP1: "<strong>The app is free.</strong>",
+    supportP2: "All apps are free and ad-free.",
+    supportPhoneLabel: "📱 PHONE:", copyPhone: "📋 Copy", copied: "✓ Copied",
+    supportP3: "✅ Instant.", supportP4: "❤️ Thanks!",
+    supportCatalog: "Anti-AI Shield apps",
+    footer: "Anti-AI Qwen Academy • Russian history and RF legislation • 2026",
+    resultCorrect: "✅ Correct!", resultWrong: "❌ Wrong.",
+    correctAnswer: "Correct:", explanation: "Explanation:", source: "Source:",
+    summaryAnswered: "Completed:", summaryOf: "of", summaryCorrect: "Correct:",
+    summaryFinish: "Answer all tasks.",
+    verdictExcellent: "Excellent!", verdictGood: "Good, review mistakes.", verdictNeeds: "More practice.",
+    resetConfirm: "Reset all?", copyFail: "Copy failed: ",
+    questionLabel1: "1. Task", questionLabel2: "2. Hint", questionLabel3: "3. Your answer",
+    levelShort: "Short", levelLong: "Extended",
+    sourceShort: "FIPI 2026, task {task}", sourceLong: "FIPI 2026, task {task}",
+    timerUp: "Time is up!",
+    matchPlaceholder: "Enter", matchCheck: "Check", showSolution: "Show answer",
+    multiHint: "Select all correct answers (there are several)",
+    exportDone: "✓ File saved",
+    reviewEmpty: "🎉 No mistakes!",
+    reviewEmptyHint: "Solve tasks in training or exam mode to collect mistakes.",
+    sectionHistory: "Russian history (1–18)", sectionLaw: "RF legislation (19–36)",
+    refsScaleTitle: "Conversion scale", refsScaleColPoints: "Points", refsScaleColResult: "Result",
+    refsScalePass: "28–40", refsScaleFail: "0–27", refsScalePassLabel: "✅ Passed", refsScaleFailLabel: "❌ Failed",
+    refsScaleNote: "Of 28: history ≥ 12, law ≥ 12.",
+    refsMax: "Total",
+    refsPartsTitle: "Points per part", refsPartsColPart: "Part", refsPartsColMax: "Max",
+    refsPartHistory: "Russian history (1–18)", refsPartLaw: "RF legislation (19–36)",
+    refsTaskScoresTitle: "Scores per task",
+    refsTaskScoresColTask: "Task", refsTaskScoresColScore: "Score",
+    refsTask11: "11. Extended response", refsTask18: "18. Extended response", refsTask33: "33. Extended response",
+    refsTask22: "22. Short answer (2 points)",
+    refsTaskOther: "Others (1–10, 12–17, 19–21, 23–32, 34–36)",
+    refsNormsTitle: "Legal acts",
+    refsNormsColArea: "Area", refsNormsColAct: "Legal act",
+    refsNormConstitution: "Constitutional order", refsNormConstitutionVal: "Constitution of RF, art. 1–16",
+    refsNormCivil: "Civil law", refsNormCivilVal: "Civil Code of RF, art. 1, 2, 10–12, 17–24, 35–40, 128, 153–165, 209–218, 307, 309, 329, 393, 420, 1064, 1099–1101",
+    refsNormLabor: "Labour law", refsNormLabourVal: "Labour Code of RF, art. 2–4, 15, 16, 20, 21, 56–60, 65, 77, 81, 83, 192",
+    refsNormFamily: "Family law", refsNormFamilyVal: "Family Code of RF, art. 1, 2, 10–14, 16–18, ch. 7, 8",
+    refsNormCitizenship: "Citizenship", refsNormCitizenshipVal: "Federal Law No. 138-FZ of 28.04.2023, art. 14–18, 21–26",
+    refsNormMigration: "Migration registration", refsNormMigrationVal: "Federal Law No. 109-FZ of 18.07.2007; Government Decree No. 9 of 15.01.2007",
+    refsNormEntry: "Entry and exit", refsNormEntryVal: "Federal Law No. 114-FZ of 15.08.1996, art. 24, 25.8, 25.10, 25.16",
+    refsNormDocs: "Residence documents", refsNormDocsVal: "Order of the Ministry of Internal Affairs of Russia No. 856 of 10.12.2020, paras. 35–37",
+    refRulesList: [
+      "Read each task instruction carefully.",
+      "Tasks 1–10, 12–17, 19–21, 23–32, 34–36 — short answer (1 point).",
+      "Task 22 — short answer, scored 2 points.",
+      "Tasks 11, 18, 33 — extended written response (2 points each).",
+      "Threshold: 28 of 40, with history ≥ 12 and law ≥ 12.",
+      "Maximum exam duration — 90 minutes."
+    ]
+  }
+};
+
+/* ============================================================
+   STATIC DATA — структура КИМ
+============================================================ */
+const structureCards = [
+  { cardClass: "warn-card", tagClass: "orange",
+    tag: { ru: "История России", en: "Russian history" },
+    title: { ru: "Задания 1–18 (20 баллов)", en: "Tasks 1–18 (20 points)" },
+    items: [
+      { ru: "1–10, 12–17 — краткий ответ (по 1 баллу).", en: "1–10, 12–17 — short answer (1 point each)." },
+      { ru: "11, 18 — развёрнутый ответ (по 2 балла).", en: "11, 18 — extended response (2 points each)." },
+      { ru: "Максимум за часть — 20 баллов.", en: "Maximum for the part — 20 points." }
+    ] },
+  { cardClass: "success-card", tagClass: "green",
+    tag: { ru: "Основы законодательства", en: "Legislation basics" },
+    title: { ru: "Задания 19–36 (20 баллов)", en: "Tasks 19–36 (20 points)" },
+    items: [
+      { ru: "19–21, 23–32, 34–36 — краткий ответ (по 1 баллу).", en: "19–21, 23–32, 34–36 — short answer (1 point each)." },
+      { ru: "22 — краткий ответ (2 балла).", en: "22 — short answer (2 points)." },
+      { ru: "33 — развёрнутый ответ (2 балла).", en: "33 — extended response (2 points)." },
+      { ru: "Максимум за часть — 20 баллов.", en: "Maximum for the part — 20 points." }
+    ] },
+  { cardClass: "danger-card", tagClass: "red",
+    tag: { ru: "Порог", en: "Threshold" },
+    title: { ru: "Минимум для успешной сдачи", en: "Minimum to pass" },
+    items: [
+      { ru: "Общий балл: не менее 28 из 40.", en: "Total: at least 28 of 40." },
+      { ru: "История России: не менее 12.", en: "Russian history: at least 12." },
+      { ru: "Основы законодательства: не менее 12.", en: "Legislation basics: at least 12." },
+      { ru: "Время: не более 90 минут.", en: "Time: no more than 90 minutes." }
+    ] }
+];
+
+const VARIANTS = ["A", "B", "C", "D"];
+
+/* ============================================================
+   QUIZ DATABASE — варианты A и B
+   section: "history" (1–18) | "law" (19–36)
+   type: "single" (1 б.) | "single2" (2 б. — задание 22)
+         | "multi" (несколько ответов) | "long" (2 б. — 11, 18, 33)
+============================================================ */
+const quizDB = {
+
+/* ==================== ВАРИАНТ A ==================== */
+A: [
+/* ---------- ИСТОРИЯ РОССИИ (1–18) ---------- */
+{ id:1, section:"history", type:"single", maxScore:1,
+  options:[{ru:"Мстислав Удалой",en:"Mstislav the Bold"},{ru:"Ярослав Мудрый",en:"Yaroslav the Wise"},{ru:"Владимир Красное Солнышко",en:"Vladimir the Red Sun"}], correct:2,
+  ru:{text:"Крещение Руси в конце X в. провёл князь", info:"Задание 1. История России.", explanation:"Крещение Руси (988 г.) провёл князь Владимир Святославич (Красное Солнышко). Ответ: 3."},
+  en:{text:"The Baptism of Rus at the end of the 10th century was carried out by Prince", info:"Task 1. Russian history.", explanation:"The Baptism of Rus (988) was carried out by Prince Vladimir Svyatoslavich (the Red Sun). Answer: 3."} },
+
+{ id:2, section:"history", type:"single", maxScore:1,
+  options:[{ru:"войском Александра Невского",en:"the army of Alexander Nevsky"},{ru:"войском Дмитрия Донского",en:"the army of Dmitry Donskoy"},{ru:"народным ополчением К. Минина и Д.М. Пожарского",en:"the people's militia of K. Minin and D.M. Pozharsky"}], correct:1,
+  ru:{text:"Войско Мамая было разгромлено", info:"Задание 2.", explanation:"Мамаево войско разгромлено в Куликовской битве (1380) войском Дмитрия Донского. Ответ: 2."},
+  en:{text:"Mamai's army was defeated by", info:"Task 2.", explanation:"Mamai's army was defeated at the Battle of Kulikovo (1380) by Dmitry Donskoy's army. Answer: 2."} },
+
+{ id:3, section:"history", type:"single", maxScore:1,
+  options:[{ru:"Астраханского ханства",en:"the Astrakhan Khanate"},{ru:"Крыма",en:"Crimea"},{ru:"Курильских островов",en:"the Kuril Islands"}], correct:0,
+  ru:{text:"При Иване Грозном к Русскому государству были присоединены земли", info:"Задание 3.", explanation:"При Иване Грозном присоединено Астраханское ханство (1556). Ответ: 1."},
+  en:{text:"Under Ivan the Terrible, the lands annexed to the Russian state were", info:"Task 3.", explanation:"Under Ivan the Terrible, the Astrakhan Khanate was annexed (1556). Answer: 1."} },
+
+{ id:4, section:"history", type:"single", maxScore:1,
+  options:[{ru:"Пётр I",en:"Peter I"},{ru:"А.В. Суворов",en:"A.V. Suvorov"},{ru:"П.С. Нахимов",en:"P.S. Nakhimov"}], correct:0,
+  ru:{text:"Во время Полтавской битвы русской армией командовал", info:"Задание 4.", explanation:"Полтавская битва (1709) — Пётр I. Ответ: 1."},
+  en:{text:"During the Battle of Poltava, the Russian army was commanded by", info:"Task 4.", explanation:"Battle of Poltava (1709) — Peter I. Answer: 1."} },
+
+{ id:5, section:"history", type:"single", maxScore:1,
+  options:[{ru:"в ходе обороны Рязани от монголов",en:"during the defence of Ryazan from the Mongols"},{ru:"в Куликовской битве",en:"at the Battle of Kulikovo"},{ru:"в Бородинском сражении",en:"at the Battle of Borodino"}], correct:2,
+  ru:{text:"М.И. Кутузов командовал войсками", info:"Задание 5.", explanation:"М.И. Кутузов — главнокомандующий в Бородинском сражении (1812). Ответ: 3."},
+  en:{text:"M.I. Kutuzov commanded the troops", info:"Task 5.", explanation:"M.I. Kutuzov — commander-in-chief at the Battle of Borodino (1812). Answer: 3."} },
+
+{ id:6, section:"history", type:"single", maxScore:1,
+  options:[{ru:"военачальником",en:"a military commander"},{ru:"реформатором",en:"a reformer"},{ru:"революционером",en:"a revolutionary"}], correct:1,
+  ru:{text:"П.А. Столыпин был", info:"Задание 6.", explanation:"П.А. Столыпин — реформатор (аграрная реформа). Ответ: 2."},
+  en:{text:"P.A. Stolypin was", info:"Task 6.", explanation:"P.A. Stolypin — a reformer (agrarian reform). Answer: 2."} },
+
+{ id:7, section:"history", type:"single", maxScore:1,
+  options:[{ru:"монархией",en:"a monarchy"},{ru:"империей",en:"an empire"},{ru:"республикой",en:"a republic"}], correct:2,
+  ru:{text:"В 1917 г. Россия была провозглашена", info:"Задание 7.", explanation:"1 сентября 1917 г. Россия провозглашена республикой. Ответ: 3."},
+  en:{text:"In 1917, Russia was proclaimed", info:"Task 7.", explanation:"On 1 September 1917, Russia was proclaimed a republic. Answer: 3."} },
+
+{ id:8, section:"history", type:"single", maxScore:1,
+  options:[{ru:"образование СССР",en:"the formation of the USSR"},{ru:"смерть И.В. Сталина",en:"the death of I.V. Stalin"},{ru:"распад СССР",en:"the collapse of the USSR"}], correct:0,
+  ru:{text:"Какое событие произошло в 1922 г.?", info:"Задание 8.", explanation:"1922 г. — образование СССР. Ответ: 1."},
+  en:{text:"Which event happened in 1922?", info:"Task 8.", explanation:"1922 — formation of the USSR. Answer: 1."} },
+
+{ id:9, section:"history", type:"single", maxScore:1,
+  options:[{ru:"весной 1941 г.",en:"in spring 1941"},{ru:"летом 1941 г.",en:"in summer 1941"},{ru:"осенью 1941 г.",en:"in autumn 1941"}], correct:1,
+  ru:{text:"Великая Отечественная война началась", info:"Задание 9.", explanation:"22 июня 1941 г. — летом 1941 г. Ответ: 2."},
+  en:{text:"The Great Patriotic War began", info:"Task 9.", explanation:"22 June 1941 — in summer 1941. Answer: 2."} },
+
+{ id:10, section:"history", type:"single", maxScore:1,
+  options:[{ru:"Оки",en:"the Oka"},{ru:"Десны",en:"the Desna"},{ru:"Волги",en:"the Volga"}], correct:2,
+  ru:{text:"Сталинградская битва (1942–1943 гг.) проходила на берегах реки", info:"Задание 10.", explanation:"Сталинградская битва — на Волге. Ответ: 3."},
+  en:{text:"The Battle of Stalingrad (1942–1943) took place on the banks of the river", info:"Task 10.", explanation:"Battle of Stalingrad — on the Volga. Answer: 3."} },
+
+{ id:11, section:"history", type:"long", maxScore:2,
+  ru:{text:"Назовите битву Великой Отечественной войны, в ходе которой совершили подвиг 28 героев-панфиловцев. В чём состоит значение этой битвы? Запишите ответ.",
+      info:"Задание 11 — развёрнутый ответ (2 балла).",
+      explanation:"ЭТАЛОН:\n1) Название битвы — битва за Москву (Московская битва).\n2) Значение, например: был сорван гитлеровский план «молниеносной войны»; вражеские войска были отброшены на 120–150 км от советской столицы.\n(Может быть указано другое значение.)"},
+  en:{text:"Name the battle of the Great Patriotic War during which 28 Panfilov heroes performed their feat. What is the significance of this battle? Write your answer.",
+      info:"Task 11 — extended response (2 points).",
+      explanation:"MODEL:\n1) Name of the battle — the Battle of Moscow (Moscow Battle).\n2) Significance: Hitler's \"blitzkrieg\" plan was thwarted; enemy troops were pushed back 120–150 km from the Soviet capital.\n(Other significance may be given.)"} },
+
+{ id:12, section:"history", type:"single", maxScore:1,
+  options:[{ru:"Летних Олимпийских игр",en:"the Summer Olympic Games"},{ru:"Чемпионата мира по футболу",en:"the FIFA World Cup"},{ru:"Зимних Олимпийских игр",en:"the Winter Olympic Games"}], correct:0,
+  ru:{text:"В 1980 г. Москва стала местом проведения", info:"Задание 12.", explanation:"1980 г. — Летние Олимпийские игры в Москве. Ответ: 1."},
+  en:{text:"In 1980, Moscow became the venue of", info:"Task 12.", explanation:"1980 — Summer Olympic Games in Moscow. Answer: 1."} },
+
+{ id:13, section:"history", type:"single", maxScore:1,
+  options:[{ru:"было создано Содружество Независимых Государств (СНГ)",en:"the Commonwealth of Independent States (CIS) was created"},{ru:"состоялся запуск первого в мире искусственного спутника Земли",en:"the world's first artificial Earth satellite was launched"},{ru:"к власти пришли большевики во главе с В.И. Лениным",en:"the Bolsheviks led by V.I. Lenin came to power"}], correct:0,
+  ru:{text:"После распада СССР", info:"Задание 13.", explanation:"После распада СССР создано СНГ (1991). Ответ: 1."},
+  en:{text:"After the collapse of the USSR", info:"Task 13.", explanation:"After the collapse of the USSR, the CIS was created (1991). Answer: 1."} },
+
+{ id:14, section:"history", type:"single", maxScore:1,
+  options:[{ru:"Л.Н. Толстой",en:"L.N. Tolstoy"},{ru:"Д.И. Менделеев",en:"D.I. Mendeleev"},{ru:"М.И. Глинка",en:"M.I. Glinka"}], correct:1,
+  ru:{text:"Знаменитый российский химик –", info:"Задание 14.", explanation:"Д.И. Менделеев — химик (периодический закон). Ответ: 2."},
+  en:{text:"A famous Russian chemist —", info:"Task 14.", explanation:"D.I. Mendeleev — chemist (periodic law). Answer: 2."} },
+
+{ id:15, section:"history", type:"single", maxScore:1,
+  options:[{ru:"Ф.М. Достоевский",en:"F.M. Dostoevsky"},{ru:"П.И. Чайковский",en:"P.I. Tchaikovsky"},{ru:"И.В. Курчатов",en:"I.V. Kurchatov"}], correct:0,
+  ru:{text:"Роман «Преступление и наказание» написал", info:"Задание 15.", explanation:"«Преступление и наказание» — Ф.М. Достоевский. Ответ: 1."},
+  en:{text:"The novel \"Crime and Punishment\" was written by", info:"Task 15.", explanation:"\"Crime and Punishment\" — F.M. Dostoevsky. Answer: 1."} },
+
+{ id:16, section:"history", type:"single", maxScore:1,
+  options:[{ru:"балет «Щелкунчик»",en:"the ballet \"The Nutcracker\""},{ru:"роман «Евгений Онегин»",en:"the novel \"Eugene Onegin\""},{ru:"оперу «Жизнь за царя»",en:"the opera \"A Life for the Tsar\""}], correct:1,
+  ru:{text:"А.С. Пушкин создал", info:"Задание 16.", explanation:"А.С. Пушкин — роман «Евгений Онегин». Ответ: 2."},
+  en:{text:"A.S. Pushkin created", info:"Task 16.", explanation:"A.S. Pushkin — the novel \"Eugene Onegin\". Answer: 2."} },
+
+{ id:17, section:"history", type:"single", maxScore:1,
+  options:[{ru:"1941 г.",en:"1941"},{ru:"1943 г.",en:"1943"},{ru:"1945 г.",en:"1945"}], correct:0,
+  ru:{text:"Прочитайте текст и укажите год, когда произошли события, о которых идёт речь.\n\nВоенный парад 7 ноября имел огромное значение. Он способствовал укреплению морального духа советского народа и его Вооружённых Сил, продемонстрировал решимость отстоять Москву и разгромить врага. Утреннее сообщение по радио 7 ноября для многих стало неожиданным. Фронтовики и работники тыла поняли, что если в столице состоялся праздничный парад, то Москва имеет достаточно сил, чтобы выстоять.",
+      info:"Задание 17.", explanation:"Речь о параде 7 ноября 1941 г. в осаждённой Москве. Ответ: 1."},
+  en:{text:"Read the text and indicate the year when the events described took place.\n\nThe military parade on 7 November was of great importance. It helped strengthen the morale of the Soviet people and their Armed Forces, demonstrated the determination to defend Moscow and defeat the enemy. The morning radio announcement on 7 November came as a surprise to many. Front-line soldiers and home-front workers understood that if a festive parade was held in the capital, Moscow had enough strength to hold out.",
+      info:"Task 17.", explanation:"This refers to the parade of 7 November 1941 in besieged Moscow. Answer: 1."} },
+
+{ id:18, section:"history", type:"long", maxScore:2,
+  ru:{text:"Рассмотрите изображение и выполните задание.\n\n[Изображение: плакат «18 МАРТА. РОССИЯ – КРЫМ. МЫ ВМЕСТЕ!»]\n\nУкажите событие XXI в. из истории нашей страны, символом которого служит это изображение. В чём состоит значение этого события? Запишите ответ.",
+      info:"Задание 18 — развёрнутый ответ (2 балла).",
+      explanation:"ЭТАЛОН:\n1) Событие — воссоединение Крыма с Россией (18 марта 2014 г.).\n(Принимается синонимичное название, отражающее суть воссоединения. Иное название, не отражающее суть — не принимается.)\n2) Значение, например: крымчане получили возможность спокойно и безопасно жить в России, без страха преследований, возможность говорить и учиться на родном языке, иметь стабильное и надёжное будущее.\n(Может быть указано другое значение.)"},
+  en:{text:"Look at the image and complete the task.\n\n[Image: poster \"18 MARCH. RUSSIA – CRIMEA. WE ARE TOGETHER!\"]\n\nName the 21st-century event in our country's history symbolised by this image. What is the significance of this event? Write your answer.",
+      info:"Task 18 — extended response (2 points).",
+      explanation:"MODEL:\n1) Event — the reunification of Crimea with Russia (18 March 2014).\n(A synonymous name reflecting the essence of the reunification is accepted. A different name not reflecting the essence is not accepted.)\n2) Significance: Crimeans gained the opportunity to live calmly and safely in Russia, without fear of persecution, to speak and study in their native language, and to have a stable and reliable future.\n(Other significance may be given.)"} },
+
+/* ---------- ОСНОВЫ ЗАКОНОДАТЕЛЬСТВА (19–36) ---------- */
+{ id:19, section:"law", type:"multi", maxScore:1, correctIndices:[0,2],
+  options:[{ru:"Гарантируется свободное перемещение товаров, услуг и финансовых средств на территории РФ.",en:"Free movement of goods, services and financial resources across RF is guaranteed."},
+           {ru:"Участниками регулируемых гражданским законодательством отношений являются граждане и организации.",en:"Participants in relations regulated by civil law are citizens and organisations."},
+           {ru:"Человек, его права и свободы являются высшей ценностью.",en:"Man, his rights and freedoms are the highest value."},
+           {ru:"Работодатель обязан вести учёт времени, фактически отработанного каждым работником.",en:"The employer must keep records of the time actually worked by each employee."}],
+  ru:{text:"Выберите в приведённом списке две характеристики основ конституционного строя Российской Федерации. Запишите цифры, под которыми они указаны.", info:"Задание 19 — выбор нескольких ответов (1 балл).", explanation:"Основы конституционного строя: свободное перемещение товаров, услуг и финансовых средств (ст. 8); человек, его права и свободы — высшая ценность (ст. 2). Ответ: 13 или 31."},
+  en:{text:"Choose two characteristics of the foundations of the constitutional order of the Russian Federation from the list. Write down the numbers under which they are indicated.", info:"Task 19 — multiple answers (1 point).", explanation:"Foundations of the constitutional order: free movement of goods, services and financial resources (art. 8); man, his rights and freedoms are the highest value (art. 2). Answer: 13 or 31."} },
+
+{ id:20, section:"law", type:"single", maxScore:1,
+  options:[{ru:"Органы законодательной, исполнительной и судебной власти самостоятельны.",en:"The legislative, executive and judicial authorities are independent."},
+           {ru:"В Российской Федерации устанавливается гарантированный минимальный размер оплаты труда.",en:"RF establishes a guaranteed minimum wage."},
+           {ru:"Во взаимоотношениях с федеральными органами государственной власти все субъекты РФ равноправны между собой.",en:"In relations with federal state authorities, all RF subjects are equal among themselves."}],
+  correct:1,
+  ru:{text:"Что характеризует Российскую Федерацию как социальное государство?", info:"Задание 20.", explanation:"Социальное государство — гарантированный МРОТ (ст. 7 Конституции РФ). Ответ: 2."},
+  en:{text:"What characterises the Russian Federation as a social state?", info:"Task 20.", explanation:"Social state — guaranteed minimum wage (art. 7 of the Constitution of RF). Answer: 2."} },
+
+{ id:21, section:"law", type:"single", maxScore:1,
+  options:[{ru:"Судьи несменяемы.",en:"Judges are irremovable."},
+           {ru:"Общественные объединения равны перед законом.",en:"Public associations are equal before the law."},
+           {ru:"Президент Российской Федерации избирается сроком на шесть лет.",en:"The President of the Russian Federation is elected for a term of six years."}],
+  correct:2,
+  ru:{text:"Что характеризует Российскую Федерацию как государство с республиканской формой правления?", info:"Задание 21.", explanation:"Республиканская форма правления — избрание Президента на срок 6 лет (ст. 1, 81 Конституции РФ). Ответ: 3."},
+  en:{text:"What characterises the Russian Federation as a state with a republican form of government?", info:"Task 21.", explanation:"Republican form of government — election of the President for a 6-year term (art. 1, 81 of the Constitution of RF). Answer: 3."} },
+
+{ id:22, section:"law", type:"multi", maxScore:2, correctIndices:[1,4,5],
+  options:[{ru:"Алекс получил образование, соответствующее уровню высшего образования в РФ.",en:"Alex received education corresponding to the level of higher education in RF."},
+           {ru:"Алекс постоянно проживает в РФ со дня принятия решения о выдаче вида на жительство и до дня подачи заявления о приёме в гражданство в течение пяти лет.",en:"Alex has permanently resided in RF from the day of the decision to issue a residence permit until the day of applying for citizenship for five years."},
+           {ru:"Алекс состоит в зарегистрированном браке, воспитывает детей.",en:"Alex is in a registered marriage and raises children."},
+           {ru:"Алекс планирует купить недвижимость на территории РФ.",en:"Alex plans to buy real estate in RF."},
+           {ru:"Алекс подтвердил в установленном законом порядке знание истории России и основ законодательства РФ.",en:"Alex has confirmed in the established legal order knowledge of Russian history and RF legislation basics."},
+           {ru:"Алекс владеет русским языком.",en:"Alex has command of the Russian language."}],
+  ru:{text:"Алекс, совершеннолетний дееспособный гражданин иностранного государства, решил стать гражданином России. При каких условиях Алекс вправе подать заявление о приёме в гражданство РФ по общему правилу? Запишите цифры, под которыми указаны три условия.", info:"Задание 22 — выбор нескольких ответов (2 балла).", explanation:"Общие условия (ст. 15 ФЗ № 138-ФЗ): 5 лет проживания, знание истории и законодательства, владение русским языком. Ответ: 256."},
+  en:{text:"Alex, an adult capable citizen of a foreign state, decided to become a Russian citizen. Under what conditions may Alex apply for admission to RF citizenship under the general rule? Write down the numbers of three conditions.", info:"Task 22 — multiple answers (2 points).", explanation:"General conditions (art. 15 of Federal Law No. 138-FZ): 5 years of residence, knowledge of history and legislation, command of Russian. Answer: 256."} },
+
+{ id:23, section:"law", type:"single", maxScore:1,
+  options:[{ru:"верно",en:"true"},{ru:"неверно",en:"false"}], correct:0,
+  ru:{text:"Проживание гражданина Российской Федерации за пределами Российской Федерации не прекращает его гражданства Российской Федерации. Верно ли это утверждение?", info:"Задание 23.", explanation:"Проживание за пределами РФ не прекращает гражданство РФ. Ответ: 1."},
+  en:{text:"A Russian citizen's residence outside the Russian Federation does not terminate his/her RF citizenship. Is this statement correct?", info:"Task 23.", explanation:"Residence outside RF does not terminate RF citizenship. Answer: 1."} },
+
+{ id:24, section:"law", type:"multi", maxScore:1, correctIndices:[0,3],
+  options:[{ru:"насильственные действия сексуального характера с особой жестокостью",en:"violent acts of a sexual nature with particular cruelty"},
+           {ru:"воспрепятствование осуществлению правосудия и производству предварительного расследования",en:"obstruction of justice and preliminary investigation"},
+           {ru:"посредничество во взяточничестве",en:"mediation in bribery"},
+           {ru:"оказание помощи противнику в деятельности, заведомо направленной против безопасности страны",en:"assistance to the enemy in activities knowingly directed against the country's security"}],
+  ru:{text:"Выберите в приведённом списке два основания для прекращения гражданства Российской Федерации, полученного не по праву рождения. Запишите цифры, под которыми они указаны.", info:"Задание 24 — выбор нескольких ответов (1 балл).", explanation:"Основания прекращения гражданства (ст. 22–24 ФЗ № 138-ФЗ): 1) насильственные действия сексуального характера с особой жестокостью; 4) оказание помощи противнику. Ответ: 14 или 41."},
+  en:{text:"Choose from the list two grounds for termination of RF citizenship acquired not by birth. Write down the numbers under which they are indicated.", info:"Task 24 — multiple answers (1 point).", explanation:"Grounds for termination of citizenship (art. 22–24 of Federal Law No. 138-FZ): 1) violent acts of a sexual nature with particular cruelty; 4) assistance to the enemy. Answer: 14 or 41."} },
+
+{ id:25, section:"law", type:"single", maxScore:1,
+  options:[{ru:"трудового",en:"labour law"},{ru:"гражданского",en:"civil law"},{ru:"государственного",en:"state law"}], correct:1,
+  ru:{text:"Гражданка Л. взяла в банке кредит на покупку земельного участка. Нормами какого права регулируются её отношения с банком?", info:"Задание 25.", explanation:"Кредитный договор — гражданское право (ГК РФ). Ответ: 2."},
+  en:{text:"Citizen L. took a bank loan to buy a land plot. What law governs her relations with the bank?", info:"Task 25.", explanation:"Loan agreement — civil law (Civil Code of RF). Answer: 2."} },
+
+{ id:26, section:"law", type:"single", maxScore:1,
+  options:[{ru:"Анна подарила сыну свой загородный дом.",en:"Anna gave her country house to her son."},
+           {ru:"Жерар имеет в собственности квартиру в России.",en:"Gerard owns an apartment in Russia."},
+           {ru:"Хасан на своём автомобиле выполняет работу курьера.",en:"Khasan uses his car to work as a courier."}],
+  correct:0,
+  ru:{text:"В какой из приведённых ситуаций собственник распорядился принадлежащим ему имуществом?", info:"Задание 26.", explanation:"Распоряжение — дарение дома (ст. 209 ГК РФ). Ответ: 1."},
+  en:{text:"In which of the given situations did the owner dispose of his/her property?", info:"Task 26.", explanation:"Disposition — gifting the house (art. 209 of the Civil Code of RF). Answer: 1."} },
+
+{ id:27, section:"law", type:"single", maxScore:1,
+  options:[{ru:"нет",en:"no"},{ru:"да",en:"yes"},{ru:"да, если лицо является иностранным гражданином",en:"yes, if the person is a foreign citizen"}], correct:0,
+  ru:{text:"Нужно ли обязательное образование юридического лица для занятий предпринимательской деятельностью на территории Российской Федерации?", info:"Задание 27.", explanation:"Предпринимательская деятельность возможна без образования юридического лица (ИП). Ответ: 1."},
+  en:{text:"Is it mandatory to form a legal entity to engage in entrepreneurial activity in the Russian Federation?", info:"Task 27.", explanation:"Entrepreneurial activity is possible without forming a legal entity (sole proprietor). Answer: 1."} },
+
+{ id:28, section:"law", type:"single", maxScore:1,
+  options:[{ru:"привлечения продавца к административной ответственности",en:"bringing the seller to administrative liability"},
+           {ru:"возврата средств или замены товара",en:"a refund or replacement of the goods"},
+           {ru:"бесплатной передачи товара в своё пользование",en:"free transfer of the goods for own use"}],
+  correct:1,
+  ru:{text:"Гражданин А. купил в магазине пальто. Дома он обнаружил, что рукав разорван. Он вправе потребовать", info:"Задание 28.", explanation:"Право потребителя — возврат средств или замена товара (Закон о защите прав потребителей). Ответ: 2."},
+  en:{text:"Citizen A. bought a coat in a shop. At home he found that the sleeve was torn. He has the right to demand", info:"Task 28.", explanation:"Consumer's right — refund or replacement (Consumer Rights Protection Law). Answer: 2."} },
+
+{ id:29, section:"law", type:"single", maxScore:1,
+  options:[{ru:"верно",en:"true"},{ru:"неверно",en:"false"}], correct:0,
+  ru:{text:"Обязательными для включения в трудовой договор в Российской Федерации являются условия оплаты труда. Верно ли это утверждение?", info:"Задание 29.", explanation:"Условия оплаты труда — обязательные для трудового договора (ст. 57 ТК РФ). Ответ: 1."},
+  en:{text:"Terms of remuneration are mandatory for inclusion in an employment contract in the Russian Federation. Is this statement correct?", info:"Task 29.", explanation:"Terms of remuneration are mandatory for an employment contract (art. 57 of the Labour Code of RF). Answer: 1."} },
+
+{ id:30, section:"law", type:"single", maxScore:1,
+  options:[{ru:"своевременно и в полном объёме получать заработную плату",en:"to receive wages promptly and in full"},
+           {ru:"соблюдать трудовую дисциплину",en:"to observe labour discipline"},
+           {ru:"добросовестно исполнять свои трудовые функции",en:"to conscientiously perform one's labour functions"}],
+  correct:0,
+  ru:{text:"Какое право имеет работник в Российской Федерации?", info:"Задание 30.", explanation:"Право работника — своевременная и полная зарплата (ст. 21 ТК РФ). Ответ: 1."},
+  en:{text:"What right does an employee have in the Russian Federation?", info:"Task 30.", explanation:"Employee's right — timely and full wages (art. 21 of the Labour Code of RF). Answer: 1."} },
+
+{ id:31, section:"law", type:"single", maxScore:1,
+  options:[{ru:"желание работника",en:"the employee's wish"},
+           {ru:"истечение срока действия трудового договора",en:"expiry of the employment contract"},
+           {ru:"сокращение численности штата работников",en:"reduction in the number of employees"}],
+  correct:2,
+  ru:{text:"Что в Российской Федерации относится к основаниям прекращения (расторжения) трудового договора по инициативе работодателя?", info:"Задание 31.", explanation:"По инициативе работодателя — сокращение численности штата (ст. 81 ТК РФ). Ответ: 3."},
+  en:{text:"What in the Russian Federation refers to the grounds for termination of an employment contract at the employer's initiative?", info:"Task 31.", explanation:"At the employer's initiative — reduction in the number of employees (art. 81 of the Labour Code of RF). Answer: 3."} },
+
+{ id:32, section:"law", type:"single", maxScore:1,
+  options:[{ru:"конституционного",en:"constitutional law"},{ru:"административного",en:"administrative law"},{ru:"семейного",en:"family law"}], correct:2,
+  ru:{text:"Гражданка Н. оформила опекунство над своей несовершеннолетней племянницей, родители которой погибли в автокатастрофе. Нормами какого права регулируются подобные правоотношения?", info:"Задание 32.", explanation:"Опека — семейное право (СК РФ). Ответ: 3."},
+  en:{text:"Citizen N. took guardianship of her minor niece, whose parents died in a car accident. What law governs such relations?", info:"Task 32.", explanation:"Guardianship — family law (Family Code of RF). Answer: 3."} },
+
+{ id:33, section:"law", type:"long", maxScore:2,
+  ru:{text:"Проанализируйте ситуацию и выполните задание.\n\nГраждане Российской Федерации Магда и Франк решили заключить брачный договор.\n\nПо обоюдному согласию они включили в него пункты:\n• о правах и обязанностях в отношении своих будущих детей;\n• о своих правах и обязанностях по взаимному содержанию;\n• о порядке несения каждым супругом семейных расходов;\n• об обязанности супругов согласовывать друг с другом все вопросы, связанные с проведением досуга.\n\nНотариус, к которому они обратились за удостоверением брачного договора, указал на необходимость исключить два пункта.\n\nО каких двух из перечисленных выше пунктов идёт речь? Свой ответ объясните.",
+      info:"Задание 33 — развёрнутый ответ (2 балла).",
+      explanation:"ЭТАЛОН:\n1) Ответ на вопрос:\n– о правах и обязанностях в отношении своих будущих детей;\n– об обязанности супругов согласовывать друг с другом все вопросы, связанные с проведением досуга.\n(Ответ засчитывается только при указании двух пунктов.)\n2) Объяснение: брачный договор в РФ регулирует только имущественные отношения супругов / не может регулировать личные неимущественные отношения.\n(Может быть дано другое объяснение.)"},
+  en:{text:"Analyse the situation and complete the task.\n\nRussian citizens Magda and Frank decided to conclude a marriage contract.\n\nBy mutual consent they included the following clauses:\n• on rights and obligations regarding their future children;\n• on their rights and obligations for mutual maintenance;\n• on the procedure for each spouse to bear family expenses;\n• on the spouses' obligation to coordinate with each other all matters related to leisure activities.\n\nThe notary they approached for certification of the marriage contract pointed out the need to exclude two clauses.\n\nWhich two of the above clauses are meant? Explain your answer.",
+      info:"Task 33 — extended response (2 points).",
+      explanation:"MODEL:\n1) Answer:\n– on rights and obligations regarding their future children;\n– on the spouses' obligation to coordinate all matters related to leisure activities.\n(The answer is counted only if two clauses are indicated.)\n2) Explanation: a marriage contract in RF regulates only the property relations of spouses / cannot regulate personal non-property relations.\n(Other explanation may be given.)"} },
+
+{ id:34, section:"law", type:"single", maxScore:1,
+  options:[{ru:"верно",en:"true"},{ru:"неверно",en:"false"}], correct:1,
+  ru:{text:"В Российской Федерации имущество, принадлежавшее каждому из супругов до вступления в брак, является общим имуществом супругов. Верно ли это утверждение?", info:"Задание 34.", explanation:"Добрачное имущество — личная собственность (ст. 36 СК РФ). Ответ: 2."},
+  en:{text:"In the Russian Federation, property that belonged to each spouse before marriage is the joint property of the spouses. Is this statement correct?", info:"Task 34.", explanation:"Pre-marital property — personal property (art. 36 of the Family Code of RF). Answer: 2."} },
+
+{ id:35, section:"law", type:"single", maxScore:1,
+  options:[{ru:"Супруги прожили вместе более трёх лет.",en:"The spouses have lived together for more than three years."},
+           {ru:"У супругов есть общие несовершеннолетние дети.",en:"The spouses have common minor children."},
+           {ru:"Супруги ведут совместный бизнес.",en:"The spouses run a joint business."}],
+  correct:1,
+  ru:{text:"Супруги решили расторгнуть брак. При каком условии в Российской Федерации этот вопрос может быть решён только в суде?", info:"Задание 35.", explanation:"При наличии общих несовершеннолетних детей — только суд (ст. 21 СК РФ). Ответ: 2."},
+  en:{text:"The spouses decided to dissolve the marriage. Under what condition in the Russian Federation can this issue be resolved only in court?", info:"Task 35.", explanation:"If there are common minor children — only in court (art. 21 of the Family Code of RF). Answer: 2."} },
+
+{ id:36, section:"law", type:"single", maxScore:1,
+  options:[{ru:"верно",en:"true"},{ru:"неверно",en:"false"}], correct:0,
+  ru:{text:"Нарушение правил пересечения Государственной границы Российской Федерации лицами и транспортными средствами влечёт наложение административного штрафа. Верно ли это утверждение?", info:"Задание 36.", explanation:"Нарушение правил пересечения госграницы — административный штраф (КоАП РФ). Ответ: 1."},
+  en:{text:"Violation of the rules for crossing the State Border of the Russian Federation by persons and vehicles entails an administrative fine. Is this statement correct?", info:"Task 36.", explanation:"Violation of the rules for crossing the state border — administrative fine (Code of Administrative Offences of RF). Answer: 1."} }
+],
+
+/* ==================== ВАРИАНТ B ==================== */
+B: [
+/* ---------- ИСТОРИЯ РОССИИ (1–18) ---------- */
+{ id:1, section:"history", type:"single", maxScore:1,
+  options:[{ru:"862 г.",en:"862"},{ru:"882 г.",en:"882"},{ru:"988 г.",en:"988"}], correct:0,
+  ru:{text:"В каком году, согласно летописи, произошло образование государства Русь (призвание Рюрика)?", info:"Задание 1.", explanation:"862 г. — призвание Рюрика. Ответ: 1."},
+  en:{text:"In what year, according to the chronicle, was the state of Rus formed (the calling of Rurik)?", info:"Task 1.", explanation:"862 — calling of Rurik. Answer: 1."} },
+
+{ id:2, section:"history", type:"single", maxScore:1,
+  options:[{ru:"Владимир Святославич",en:"Vladimir Svyatoslavich"},{ru:"Ярослав Мудрый",en:"Yaroslav the Wise"},{ru:"Иван III",en:"Ivan III"}], correct:0,
+  ru:{text:"Кто крестил Русь в 988 году?", info:"Задание 2.", explanation:"Крещение Руси — Владимир Святославич. Ответ: 1."},
+  en:{text:"Who baptized Rus in 988?", info:"Task 2.", explanation:"Baptism of Rus — Vladimir Svyatoslavich. Answer: 1."} },
+
+{ id:3, section:"history", type:"single", maxScore:1,
+  options:[{ru:"1242 г.",en:"1242"},{ru:"1237 г.",en:"1237"},{ru:"1380 г.",en:"1380"}], correct:0,
+  ru:{text:"В каком году произошло Ледовое побоище?", info:"Задание 3.", explanation:"1242 г. — Ледовое побоище. Ответ: 1."},
+  en:{text:"In what year did the Battle on the Ice take place?", info:"Task 3.", explanation:"1242 — Battle on the Ice. Answer: 1."} },
+
+{ id:4, section:"history", type:"single", maxScore:1,
+  options:[{ru:"Дмитрий Донской",en:"Dmitry Donskoy"},{ru:"Александр Невский",en:"Alexander Nevsky"},{ru:"Иван Калита",en:"Ivan Kalita"}], correct:0,
+  ru:{text:"Кто командовал русским войском в Куликовской битве 1380 года?", info:"Задание 4.", explanation:"Куликовская битва — Дмитрий Донской. Ответ: 1."},
+  en:{text:"Who commanded the Russian army in the Battle of Kulikovo in 1380?", info:"Task 4.", explanation:"Battle of Kulikovo — Dmitry Donskoy. Answer: 1."} },
+
+{ id:5, section:"history", type:"single", maxScore:1,
+  options:[{ru:"1480 г.",en:"1480"},{ru:"1380 г.",en:"1380"},{ru:"1242 г.",en:"1242"}], correct:0,
+  ru:{text:"В каком году произошло «стояние» на реке Угре?", info:"Задание 5.", explanation:"1480 г. — «стояние» на Угре. Ответ: 1."},
+  en:{text:"In what year did the \"standing\" on the Ugra River take place?", info:"Task 5.", explanation:"1480 — \"standing\" on the Ugra. Answer: 1."} },
+
+{ id:6, section:"history", type:"single", maxScore:1,
+  options:[{ru:"Иван IV Грозный",en:"Ivan IV the Terrible"},{ru:"Иван III",en:"Ivan III"},{ru:"Пётр I",en:"Peter I"}], correct:0,
+  ru:{text:"При каком правителе был созван первый Земский собор (1549 г.)?", info:"Задание 6.", explanation:"1549 г. — Иван IV Грозный. Ответ: 1."},
+  en:{text:"Under which ruler was the first Zemsky Sobor convened (1549)?", info:"Task 6.", explanation:"1549 — Ivan IV the Terrible. Answer: 1."} },
+
+{ id:7, section:"history", type:"single", maxScore:1,
+  options:[{ru:"К. Минин и Д.М. Пожарский",en:"K. Minin and D.M. Pozharsky"},{ru:"А.Д. Меншиков и Пётр I",en:"A.D. Menshikov and Peter I"},{ru:"И.С. Конев и Г.К. Жуков",en:"I.S. Konev and G.K. Zhukov"}], correct:0,
+  ru:{text:"Кто возглавил народное ополчение, освободившее Москву в 1612 году?", info:"Задание 7.", explanation:"1612 г. — К. Минин и Д.М. Пожарский. Ответ: 1."},
+  en:{text:"Who led the people's militia that liberated Moscow in 1612?", info:"Task 7.", explanation:"1612 — K. Minin and D.M. Pozharsky. Answer: 1."} },
+
+{ id:8, section:"history", type:"single", maxScore:1,
+  options:[{ru:"Михаил Фёдорович",en:"Mikhail Fedorovich"},{ru:"Алексей Михайлович",en:"Alexey Mikhailovich"},{ru:"Пётр I",en:"Peter I"}], correct:0,
+  ru:{text:"Кто был первым царём из династии Романовых?", info:"Задание 8.", explanation:"Михаил Фёдорович Романов. Ответ: 1."},
+  en:{text:"Who was the first tsar of the Romanov dynasty?", info:"Task 8.", explanation:"Mikhail Fedorovich Romanov. Answer: 1."} },
+
+{ id:9, section:"history", type:"single", maxScore:1,
+  options:[{ru:"Пётр I",en:"Peter I"},{ru:"Екатерина II",en:"Catherine II"},{ru:"Александр I",en:"Alexander I"}], correct:0,
+  ru:{text:"Кто основал Санкт-Петербург в 1703 году?", info:"Задание 9.", explanation:"Пётр I. Ответ: 1."},
+  en:{text:"Who founded St Petersburg in 1703?", info:"Task 9.", explanation:"Peter I. Answer: 1."} },
+
+{ id:10, section:"history", type:"single", maxScore:1,
+  options:[{ru:"Екатерина II",en:"Catherine II"},{ru:"Елизавета Петровна",en:"Elizabeth Petrovna"},{ru:"Анна Иоанновна",en:"Anna Ioannovna"}], correct:0,
+  ru:{text:"При какой императрице Крым был присоединён к России (1783 г.)?", info:"Задание 10.", explanation:"Екатерина II. Ответ: 1."},
+  en:{text:"Under which empress was Crimea annexed to Russia (1783)?", info:"Task 10.", explanation:"Catherine II. Answer: 1."} },
+
+{ id:11, section:"history", type:"long", maxScore:2,
+  ru:{text:"Назовите основные события периода правления Петра I. Приведите не менее трёх событий и укажите их годы.",
+      info:"Задание 11 — развёрнутый ответ (2 балла).",
+      explanation:"ЭТАЛОН:\n1) 1700–1721 — Северная война.\n2) 1703 — основание Санкт-Петербурга.\n3) 1709 — Полтавская битва.\n4) 1712 — перенос столицы в Санкт-Петербург.\n5) 1721 — провозглашение Российской империи."},
+  en:{text:"Name the main events of Peter I's reign. Give at least three events and indicate their years.",
+      info:"Task 11 — extended response (2 points).",
+      explanation:"MODEL:\n1) 1700–1721 — Great Northern War.\n2) 1703 — founding of St Petersburg.\n3) 1709 — Battle of Poltava.\n4) 1712 — capital moved to St Petersburg.\n5) 1721 — proclamation of the Russian Empire."} },
+
+{ id:12, section:"history", type:"single", maxScore:1,
+  options:[{ru:"Александр I",en:"Alexander I"},{ru:"Николай I",en:"Nicholas I"},{ru:"Александр II",en:"Alexander II"}], correct:0,
+  ru:{text:"При каком императоре произошла Отечественная война 1812 года?", info:"Задание 12.", explanation:"Александр I. Ответ: 1."},
+  en:{text:"Under which emperor did the Patriotic War of 1812 take place?", info:"Task 12.", explanation:"Alexander I. Answer: 1."} },
+
+{ id:13, section:"history", type:"single", maxScore:1,
+  options:[{ru:"М.И. Кутузов",en:"M.I. Kutuzov"},{ru:"А.В. Суворов",en:"A.V. Suvorov"},{ru:"П.С. Нахимов",en:"P.S. Nakhimov"}], correct:0,
+  ru:{text:"Кто был главнокомандующим русской армией в Отечественной войне 1812 года?", info:"Задание 13.", explanation:"М.И. Кутузов. Ответ: 1."},
+  en:{text:"Who was the commander-in-chief of the Russian army in the Patriotic War of 1812?", info:"Task 13.", explanation:"M.I. Kutuzov. Answer: 1."} },
+
+{ id:14, section:"history", type:"single", maxScore:1,
+  options:[{ru:"Александр II",en:"Alexander II"},{ru:"Николай I",en:"Nicholas I"},{ru:"Александр III",en:"Alexander III"}], correct:0,
+  ru:{text:"При каком императоре были проведены Великие реформы 1860–1870-х гг.?", info:"Задание 14.", explanation:"Александр II (отмена крепостного права 1861). Ответ: 1."},
+  en:{text:"Under which emperor were the Great Reforms of the 1860s–1870s carried out?", info:"Task 14.", explanation:"Alexander II (abolition of serfdom 1861). Answer: 1."} },
+
+{ id:15, section:"history", type:"single", maxScore:1,
+  options:[{ru:"1917 г.",en:"1917"},{ru:"1905 г.",en:"1905"},{ru:"1914 г.",en:"1914"}], correct:0,
+  ru:{text:"В каком году произошла Российская революция, приведшая к свержению самодержавия?", info:"Задание 15.", explanation:"1917 г. Ответ: 1."},
+  en:{text:"In what year did the Russian Revolution take place, leading to the overthrow of the autocracy?", info:"Task 15.", explanation:"1917. Answer: 1."} },
+
+{ id:16, section:"history", type:"single", maxScore:1,
+  options:[{ru:"В.И. Ленин",en:"V.I. Lenin"},{ru:"И.В. Сталин",en:"I.V. Stalin"},{ru:"Н.С. Хрущёв",en:"N.S. Khrushchev"}], correct:0,
+  ru:{text:"Кто был руководителем Советской России в период 1917–1924 гг.?", info:"Задание 16.", explanation:"В.И. Ленин. Ответ: 1."},
+  en:{text:"Who led Soviet Russia in 1917–1924?", info:"Task 16.", explanation:"V.I. Lenin. Answer: 1."} },
+
+{ id:17, section:"history", type:"single", maxScore:1,
+  options:[{ru:"1941–1945 гг.",en:"1941–1945"},{ru:"1939–1945 гг.",en:"1939–1945"},{ru:"1914–1918 гг.",en:"1914–1918"}], correct:0,
+  ru:{text:"Укажите годы Великой Отечественной войны.", info:"Задание 17.", explanation:"1941–1945 гг. Ответ: 1."},
+  en:{text:"Indicate the years of the Great Patriotic War.", info:"Task 17.", explanation:"1941–1945. Answer: 1."} },
+
+{ id:18, section:"history", type:"long", maxScore:2,
+  ru:{text:"Назовите не менее трёх героев Великой Отечественной войны и укажите, чем они прославились.",
+      info:"Задание 18 — развёрнутый ответ (2 балла).",
+      explanation:"ЭТАЛОН:\n1) Г.К. Жуков — Маршал Советского Союза.\n2) А.М. Матросов — закрыл собой амбразуру дзота.\n3) З.А. Космодемьянская — партизанка, Герой Советского Союза.\n4) И.Н. Кожедуб — лётчик-ас, трижды Герой Советского Союза."},
+  en:{text:"Name at least three heroes of the Great Patriotic War and indicate what they are famous for.",
+      info:"Task 18 — extended response (2 points).",
+      explanation:"MODEL:\n1) G.K. Zhukov — Marshal of the Soviet Union.\n2) A.M. Matrosov — covered an embrasure with his body.\n3) Z.A. Kosmodemyanskaya — partisan, Hero of the Soviet Union.\n4) I.N. Kozhedub — fighter ace, three times Hero of the Soviet Union."} },
+
+/* ---------- ОСНОВЫ ЗАКОНОДАТЕЛЬСТВА (19–36) ---------- */
+{ id:19, section:"law", type:"multi", maxScore:1, correctIndices:[0,2],
+  options:[{ru:"Гарантируется свободное перемещение товаров, услуг и финансовых средств на территории РФ.",en:"Free movement of goods, services and financial resources across RF is guaranteed."},
+           {ru:"Участниками регулируемых гражданским законодательством отношений являются граждане и организации.",en:"Participants in relations regulated by civil law are citizens and organisations."},
+           {ru:"Человек, его права и свободы являются высшей ценностью.",en:"Man, his rights and freedoms are the highest value."},
+           {ru:"Работодатель обязан вести учёт времени, фактически отработанного каждым работником.",en:"The employer must keep records of the time actually worked by each employee."}],
+  ru:{text:"Выберите в приведённом списке две характеристики основ конституционного строя Российской Федерации.", info:"Задание 19 — выбор нескольких ответов (1 балл).", explanation:"Ответ: 13 или 31."},
+  en:{text:"Choose two characteristics of the foundations of the constitutional order of RF.", info:"Task 19 — multiple answers (1 point).", explanation:"Answer: 13 or 31."} },
+
+{ id:20, section:"law", type:"single", maxScore:1,
+  options:[{ru:"Органы законодательной, исполнительной и судебной власти самостоятельны.",en:"The legislative, executive and judicial authorities are independent."},
+           {ru:"В Российской Федерации устанавливается гарантированный минимальный размер оплаты труда.",en:"RF establishes a guaranteed minimum wage."},
+           {ru:"Во взаимоотношениях с федеральными органами государственной власти все субъекты РФ равноправны между собой.",en:"In relations with federal state authorities, all RF subjects are equal among themselves."}],
+  correct:1,
+  ru:{text:"Что характеризует Российскую Федерацию как социальное государство?", info:"Задание 20.", explanation:"Социальное государство — гарантированный МРОТ. Ответ: 2."},
+  en:{text:"What characterises the Russian Federation as a social state?", info:"Task 20.", explanation:"Social state — guaranteed minimum wage. Answer: 2."} },
+
+{ id:21, section:"law", type:"single", maxScore:1,
+  options:[{ru:"Судьи несменяемы.",en:"Judges are irremovable."},
+           {ru:"Общественные объединения равны перед законом.",en:"Public associations are equal before the law."},
+           {ru:"Президент Российской Федерации избирается сроком на шесть лет.",en:"The President of the Russian Federation is elected for a term of six years."}],
+  correct:2,
+  ru:{text:"Что характеризует Российскую Федерацию как государство с республиканской формой правления?", info:"Задание 21.", explanation:"Избрание Президента на 6 лет. Ответ: 3."},
+  en:{text:"What characterises the Russian Federation as a state with a republican form of government?", info:"Task 21.", explanation:"Election of the President for 6 years. Answer: 3."} },
+
+{ id:22, section:"law", type:"multi", maxScore:2, correctIndices:[1,4,5],
+  options:[{ru:"Алекс получил образование, соответствующее уровню высшего образования в РФ.",en:"Alex received education corresponding to higher education level in RF."},
+           {ru:"Алекс постоянно проживает в РФ ... в течение пяти лет.",en:"Alex has permanently resided in RF ... for five years."},
+           {ru:"Алекс состоит в зарегистрированном браке, воспитывает детей.",en:"Alex is in a registered marriage and raises children."},
+           {ru:"Алекс планирует купить недвижимость на территории РФ.",en:"Alex plans to buy real estate in RF."},
+           {ru:"Алекс подтвердил знание истории России и основ законодательства РФ.",en:"Alex has confirmed knowledge of Russian history and RF legislation basics."},
+           {ru:"Алекс владеет русским языком.",en:"Alex has command of the Russian language."}],
+  ru:{text:"При каких условиях Алекс вправе подать заявление о приёме в гражданство РФ по общему правилу? Запишите три условия.", info:"Задание 22 — выбор нескольких ответов (2 балла).", explanation:"Ответ: 256."},
+  en:{text:"Under what conditions may Alex apply for admission to RF citizenship under the general rule? Write three conditions.", info:"Task 22 — multiple answers (2 points).", explanation:"Answer: 256."} },
+
+{ id:23, section:"law", type:"single", maxScore:1,
+  options:[{ru:"верно",en:"true"},{ru:"неверно",en:"false"}], correct:0,
+  ru:{text:"Проживание гражданина РФ за пределами РФ не прекращает его гражданства РФ. Верно ли это утверждение?", info:"Задание 23.", explanation:"Ответ: 1."},
+  en:{text:"A Russian citizen's residence outside RF does not terminate his/her RF citizenship. Is this correct?", info:"Task 23.", explanation:"Answer: 1."} },
+
+{ id:24, section:"law", type:"multi", maxScore:1, correctIndices:[0,3],
+  options:[{ru:"насильственные действия сексуального характера с особой жестокостью",en:"violent acts of a sexual nature with particular cruelty"},
+           {ru:"воспрепятствование осуществлению правосудия",en:"obstruction of justice"},
+           {ru:"посредничество во взяточничестве",en:"mediation in bribery"},
+           {ru:"оказание помощи противнику",en:"assistance to the enemy"}],
+  ru:{text:"Выберите два основания для прекращения гражданства РФ, полученного не по праву рождения.", info:"Задание 24 — выбор нескольких ответов (1 балл).", explanation:"Ответ: 14 или 41."},
+  en:{text:"Choose two grounds for termination of RF citizenship acquired not by birth.", info:"Task 24 — multiple answers (1 point).", explanation:"Answer: 14 or 41."} },
+
+{ id:25, section:"law", type:"single", maxScore:1,
+  options:[{ru:"трудового",en:"labour law"},{ru:"гражданского",en:"civil law"},{ru:"государственного",en:"state law"}], correct:1,
+  ru:{text:"Гражданка Л. взяла в банке кредит на покупку земельного участка. Нормами какого права регулируются её отношения с банком?", info:"Задание 25.", explanation:"Гражданское право. Ответ: 2."},
+  en:{text:"Citizen L. took a bank loan to buy a land plot. What law governs her relations with the bank?", info:"Task 25.", explanation:"Civil law. Answer: 2."} },
+
+{ id:26, section:"law", type:"single", maxScore:1,
+  options:[{ru:"Анна подарила сыну свой загородный дом.",en:"Anna gave her country house to her son."},
+           {ru:"Жерар имеет в собственности квартиру в России.",en:"Gerard owns an apartment in Russia."},
+           {ru:"Хасан на своём автомобиле выполняет работу курьера.",en:"Khasan uses his car to work as a courier."}],
+  correct:0,
+  ru:{text:"В какой из приведённых ситуаций собственник распорядился принадлежащим ему имуществом?", info:"Задание 26.", explanation:"Дарение — распоряжение. Ответ: 1."},
+  en:{text:"In which of the given situations did the owner dispose of his/her property?", info:"Task 26.", explanation:"Gift — disposition. Answer: 1."} },
+
+{ id:27, section:"law", type:"single", maxScore:1,
+  options:[{ru:"нет",en:"no"},{ru:"да",en:"yes"},{ru:"да, если лицо является иностранным гражданином",en:"yes, if the person is a foreign citizen"}], correct:0,
+  ru:{text:"Нужно ли обязательное образование юридического лица для занятий предпринимательской деятельностью на территории РФ?", info:"Задание 27.", explanation:"Возможно без образования юрлица (ИП). Ответ: 1."},
+  en:{text:"Is it mandatory to form a legal entity to engage in entrepreneurial activity in RF?", info:"Task 27.", explanation:"Possible without forming a legal entity (sole proprietor). Answer: 1."} },
+
+{ id:28, section:"law", type:"single", maxScore:1,
+  options:[{ru:"привлечения продавца к административной ответственности",en:"bringing the seller to administrative liability"},
+           {ru:"возврата средств или замены товара",en:"a refund or replacement of the goods"},
+           {ru:"бесплатной передачи товара в своё пользование",en:"free transfer of the goods for own use"}],
+  correct:1,
+  ru:{text:"Гражданин А. купил в магазине пальто. Дома обнаружил, что рукав разорван. Он вправе потребовать", info:"Задание 28.", explanation:"Возврат или замена. Ответ: 2."},
+  en:{text:"Citizen A. bought a coat. At home he found the sleeve was torn. He has the right to demand", info:"Task 28.", explanation:"Refund or replacement. Answer: 2."} },
+
+{ id:29, section:"law", type:"single", maxScore:1,
+  options:[{ru:"верно",en:"true"},{ru:"неверно",en:"false"}], correct:0,
+  ru:{text:"Обязательными для включения в трудовой договор в РФ являются условия оплаты труда. Верно ли это утверждение?", info:"Задание 29.", explanation:"Ответ: 1."},
+  en:{text:"Terms of remuneration are mandatory for inclusion in an employment contract in RF. Is this correct?", info:"Task 29.", explanation:"Answer: 1."} },
+
+{ id:30, section:"law", type:"single", maxScore:1,
+  options:[{ru:"своевременно и в полном объёме получать заработную плату",en:"to receive wages promptly and in full"},
+           {ru:"соблюдать трудовую дисциплину",en:"to observe labour discipline"},
+           {ru:"добросовестно исполнять трудовые функции",en:"to conscientiously perform labour functions"}],
+  correct:0,
+  ru:{text:"Какое право имеет работник в Российской Федерации?", info:"Задание 30.", explanation:"Право на зарплату. Ответ: 1."},
+  en:{text:"What right does an employee have in RF?", info:"Task 30.", explanation:"Right to wages. Answer: 1."} },
+
+{ id:31, section:"law", type:"single", maxScore:1,
+  options:[{ru:"желание работника",en:"the employee's wish"},
+           {ru:"истечение срока действия трудового договора",en:"expiry of the employment contract"},
+           {ru:"сокращение численности штата работников",en:"reduction in the number of employees"}],
+  correct:2,
+  ru:{text:"Что относится к основаниям прекращения трудового договора по инициативе работодателя?", info:"Задание 31.", explanation:"Сокращение штата. Ответ: 3."},
+  en:{text:"What refers to grounds for termination of an employment contract at the employer's initiative?", info:"Task 31.", explanation:"Reduction in staff. Answer: 3."} },
+
+{ id:32, section:"law", type:"single", maxScore:1,
+  options:[{ru:"конституционного",en:"constitutional law"},{ru:"административного",en:"administrative law"},{ru:"семейного",en:"family law"}], correct:2,
+  ru:{text:"Гражданка Н. оформила опекунство над несовершеннолетней племянницей. Нормами какого права регулируются эти правоотношения?", info:"Задание 32.", explanation:"Семейное право. Ответ: 3."},
+  en:{text:"Citizen N. took guardianship of her minor niece. What law governs these relations?", info:"Task 32.", explanation:"Family law. Answer: 3."} },
+
+{ id:33, section:"law", type:"long", maxScore:2,
+  ru:{text:"Граждане Магда и Франк решили заключить брачный договор. Включили пункты: о правах и обязанностях в отношении будущих детей; о взаимном содержании; о порядке несения семейных расходов; об обязанности согласовывать вопросы досуга. Нотариус указал исключить два пункта. О каких двух пунктах идёт речь? Объясните.",
+      info:"Задание 33 — развёрнутый ответ (2 балла).",
+      explanation:"ЭТАЛОН:\n1) Исключить: о правах и обязанностях в отношении будущих детей; об обязанности согласовывать вопросы досуга.\n2) Объяснение: брачный договор регулирует только имущественные отношения супругов."},
+  en:{text:"Citizens Magda and Frank decided to conclude a marriage contract. They included clauses on future children, mutual maintenance, family expenses, and leisure coordination. The notary said two clauses must be excluded. Which two? Explain.",
+      info:"Task 33 — extended response (2 points).",
+      explanation:"MODEL:\n1) Exclude: on rights and obligations regarding future children; on the obligation to coordinate leisure matters.\n2) Explanation: a marriage contract regulates only the property relations of spouses."} },
+
+{ id:34, section:"law", type:"single", maxScore:1,
+  options:[{ru:"верно",en:"true"},{ru:"неверно",en:"false"}], correct:1,
+  ru:{text:"В РФ имущество, принадлежавшее каждому из супругов до вступления в брак, является общим имуществом супругов. Верно ли это утверждение?", info:"Задание 34.", explanation:"Добрачное имущество — личное. Ответ: 2."},
+  en:{text:"In RF, property that belonged to each spouse before marriage is joint property. Is this correct?", info:"Task 34.", explanation:"Pre-marital property — personal. Answer: 2."} },
+
+{ id:35, section:"law", type:"single", maxScore:1,
+  options:[{ru:"Супруги прожили вместе более трёх лет.",en:"The spouses have lived together for more than three years."},
+           {ru:"У супругов есть общие несовершеннолетние дети.",en:"The spouses have common minor children."},
+           {ru:"Супруги ведут совместный бизнес.",en:"The spouses run a joint business."}],
+  correct:1,
+  ru:{text:"При каком условии расторжение брака возможно только в суде?", info:"Задание 35.", explanation:"При наличии общих несовершеннолетних детей. Ответ: 2."},
+  en:{text:"Under what condition can a marriage be dissolved only in court?", info:"Task 35.", explanation:"If there are common minor children. Answer: 2."} },
+
+{ id:36, section:"law", type:"single", maxScore:1,
+  options:[{ru:"верно",en:"true"},{ru:"неверно",en:"false"}], correct:0,
+  ru:{text:"Нарушение правил пересечения Государственной границы РФ влечёт наложение административного штрафа. Верно ли это утверждение?", info:"Задание 36.", explanation:"Ответ: 1."},
+  en:{text:"Violation of the rules for crossing the State Border of RF entails an administrative fine. Is this correct?", info:"Task 36.", explanation:"Answer: 1."} }
+],
+
+/* ==================== ВАРИАНТ C ==================== */
+C: [
+/* ---------- ИСТОРИЯ РОССИИ (1–18) ---------- */
+{ id:1, section:"history", type:"single", maxScore:1,
+  options:[{ru:"862 г.",en:"862"},{ru:"882 г.",en:"882"},{ru:"988 г.",en:"988"}], correct:0,
+  ru:{text:"Какой год считается годом образования государства Русь?", info:"Задание 1.", explanation:"862 г. — призвание Рюрика. Ответ: 1."},
+  en:{text:"Which year is considered the year of formation of the state of Rus?", info:"Task 1.", explanation:"862 — calling of Rurik. Answer: 1."} },
+
+{ id:2, section:"history", type:"single", maxScore:1,
+  options:[{ru:"Владимир Красное Солнышко",en:"Vladimir the Red Sun"},{ru:"Ярослав Мудрый",en:"Yaroslav the Wise"},{ru:"Иван III",en:"Ivan III"}], correct:0,
+  ru:{text:"Крещение Руси в конце X в. провёл князь", info:"Задание 2.", explanation:"Владимир Красное Солнышко. Ответ: 1."},
+  en:{text:"The Baptism of Rus at the end of the 10th century was carried out by Prince", info:"Task 2.", explanation:"Vladimir the Red Sun. Answer: 1."} },
+
+{ id:3, section:"history", type:"single", maxScore:1,
+  options:[{ru:"войском Дмитрия Донского",en:"the army of Dmitry Donskoy"},{ru:"войском Александра Невского",en:"the army of Alexander Nevsky"},{ru:"ополчением Минина и Пожарского",en:"the militia of Minin and Pozharsky"}], correct:0,
+  ru:{text:"Войско Мамая было разгромлено", info:"Задание 3.", explanation:"Войском Дмитрия Донского (1380). Ответ: 1."},
+  en:{text:"Mamai's army was defeated by", info:"Task 3.", explanation:"Dmitry Donskoy's army (1380). Answer: 1."} },
+
+{ id:4, section:"history", type:"single", maxScore:1,
+  options:[{ru:"Астраханского ханства",en:"the Astrakhan Khanate"},{ru:"Крыма",en:"Crimea"},{ru:"Курильских островов",en:"the Kuril Islands"}], correct:0,
+  ru:{text:"При Иване Грозном к Русскому государству были присоединены земли", info:"Задание 4.", explanation:"Астраханское ханство (1556). Ответ: 1."},
+  en:{text:"Under Ivan the Terrible, the lands annexed to the Russian state were", info:"Task 4.", explanation:"Astrakhan Khanate (1556). Answer: 1."} },
+
+{ id:5, section:"history", type:"single", maxScore:1,
+  options:[{ru:"Пётр I",en:"Peter I"},{ru:"А.В. Суворов",en:"A.V. Suvorov"},{ru:"П.С. Нахимов",en:"P.S. Nakhimov"}], correct:0,
+  ru:{text:"Во время Полтавской битвы русской армией командовал", info:"Задание 5.", explanation:"Пётр I. Ответ: 1."},
+  en:{text:"During the Battle of Poltava, the Russian army was commanded by", info:"Task 5.", explanation:"Peter I. Answer: 1."} },
+
+{ id:6, section:"history", type:"single", maxScore:1,
+  options:[{ru:"в Бородинском сражении",en:"at the Battle of Borodino"},{ru:"в Куликовской битве",en:"at the Battle of Kulikovo"},{ru:"в обороне Рязани",en:"at the defence of Ryazan"}], correct:0,
+  ru:{text:"М.И. Кутузов командовал войсками", info:"Задание 6.", explanation:"В Бородинском сражении. Ответ: 1."},
+  en:{text:"M.I. Kutuzov commanded the troops", info:"Task 6.", explanation:"At the Battle of Borodino. Answer: 1."} },
+
+{ id:7, section:"history", type:"single", maxScore:1,
+  options:[{ru:"реформатором",en:"a reformer"},{ru:"военачальником",en:"a military commander"},{ru:"революционером",en:"a revolutionary"}], correct:0,
+  ru:{text:"П.А. Столыпин был", info:"Задание 7.", explanation:"Реформатором. Ответ: 1."},
+  en:{text:"P.A. Stolypin was", info:"Task 7.", explanation:"A reformer. Answer: 1."} },
+
+{ id:8, section:"history", type:"single", maxScore:1,
+  options:[{ru:"республикой",en:"a republic"},{ru:"монархией",en:"a monarchy"},{ru:"империей",en:"an empire"}], correct:0,
+  ru:{text:"В 1917 г. Россия была провозглашена", info:"Задание 8.", explanation:"Республикой (1 сентября 1917). Ответ: 1."},
+  en:{text:"In 1917, Russia was proclaimed", info:"Task 8.", explanation:"A republic (1 September 1917). Answer: 1."} },
+
+{ id:9, section:"history", type:"single", maxScore:1,
+  options:[{ru:"образование СССР",en:"the formation of the USSR"},{ru:"смерть И.В. Сталина",en:"the death of I.V. Stalin"},{ru:"распад СССР",en:"the collapse of the USSR"}], correct:0,
+  ru:{text:"Какое событие произошло в 1922 г.?", info:"Задание 9.", explanation:"Образование СССР. Ответ: 1."},
+  en:{text:"Which event happened in 1922?", info:"Task 9.", explanation:"Formation of the USSR. Answer: 1."} },
+
+{ id:10, section:"history", type:"single", maxScore:1,
+  options:[{ru:"летом 1941 г.",en:"in summer 1941"},{ru:"весной 1941 г.",en:"in spring 1941"},{ru:"осенью 1941 г.",en:"in autumn 1941"}], correct:0,
+  ru:{text:"Великая Отечественная война началась", info:"Задание 10.", explanation:"22 июня 1941 г. — летом. Ответ: 1."},
+  en:{text:"The Great Patriotic War began", info:"Task 10.", explanation:"22 June 1941 — in summer. Answer: 1."} },
+
+{ id:11, section:"history", type:"long", maxScore:2,
+  ru:{text:"Назовите битву Великой Отечественной войны, в ходе которой совершили подвиг 28 героев-панфиловцев. В чём состоит значение этой битвы? Запишите ответ.",
+      info:"Задание 11 — развёрнутый ответ (2 балла).",
+      explanation:"ЭТАЛОН:\n1) Битва за Москву (Московская битва).\n2) Значение: сорван план «молниеносной войны»; враг отброшен на 120–150 км от столицы."},
+  en:{text:"Name the battle of the Great Patriotic War during which 28 Panfilov heroes performed their feat. What is the significance of this battle?",
+      info:"Task 11 — extended response (2 points).",
+      explanation:"MODEL:\n1) Battle of Moscow.\n2) Significance: the \"blitzkrieg\" plan was thwarted; the enemy was pushed back 120–150 km from the capital."} },
+
+{ id:12, section:"history", type:"single", maxScore:1,
+  options:[{ru:"Летних Олимпийских игр",en:"the Summer Olympic Games"},{ru:"Чемпионата мира по футболу",en:"the FIFA World Cup"},{ru:"Зимних Олимпийских игр",en:"the Winter Olympic Games"}], correct:0,
+  ru:{text:"В 1980 г. Москва стала местом проведения", info:"Задание 12.", explanation:"Летних Олимпийских игр. Ответ: 1."},
+  en:{text:"In 1980, Moscow became the venue of", info:"Task 12.", explanation:"The Summer Olympic Games. Answer: 1."} },
+
+{ id:13, section:"history", type:"single", maxScore:1,
+  options:[{ru:"было создано СНГ",en:"the CIS was created"},{ru:"запущен первый спутник",en:"the first satellite was launched"},{ru:"к власти пришли большевики",en:"the Bolsheviks came to power"}], correct:0,
+  ru:{text:"После распада СССР", info:"Задание 13.", explanation:"Создано СНГ (1991). Ответ: 1."},
+  en:{text:"After the collapse of the USSR", info:"Task 13.", explanation:"The CIS was created (1991). Answer: 1."} },
+
+{ id:14, section:"history", type:"single", maxScore:1,
+  options:[{ru:"Д.И. Менделеев",en:"D.I. Mendeleev"},{ru:"Л.Н. Толстой",en:"L.N. Tolstoy"},{ru:"М.И. Глинка",en:"M.I. Glinka"}], correct:0,
+  ru:{text:"Знаменитый российский химик –", info:"Задание 14.", explanation:"Д.И. Менделеев. Ответ: 1."},
+  en:{text:"A famous Russian chemist —", info:"Task 14.", explanation:"D.I. Mendeleev. Answer: 1."} },
+
+{ id:15, section:"history", type:"single", maxScore:1,
+  options:[{ru:"Ф.М. Достоевский",en:"F.M. Dostoevsky"},{ru:"П.И. Чайковский",en:"P.I. Tchaikovsky"},{ru:"И.В. Курчатов",en:"I.V. Kurchatov"}], correct:0,
+  ru:{text:"Роман «Преступление и наказание» написал", info:"Задание 15.", explanation:"Ф.М. Достоевский. Ответ: 1."},
+  en:{text:"The novel \"Crime and Punishment\" was written by", info:"Task 15.", explanation:"F.M. Dostoevsky. Answer: 1."} },
+
+{ id:16, section:"history", type:"single", maxScore:1,
+  options:[{ru:"роман «Евгений Онегин»",en:"the novel \"Eugene Onegin\""},{ru:"балет «Щелкунчик»",en:"the ballet \"The Nutcracker\""},{ru:"оперу «Жизнь за царя»",en:"the opera \"A Life for the Tsar\""}], correct:0,
+  ru:{text:"А.С. Пушкин создал", info:"Задание 16.", explanation:"Роман «Евгений Онегин». Ответ: 1."},
+  en:{text:"A.S. Pushkin created", info:"Task 16.", explanation:"The novel \"Eugene Onegin\". Answer: 1."} },
+
+{ id:17, section:"history", type:"single", maxScore:1,
+  options:[{ru:"1941 г.",en:"1941"},{ru:"1943 г.",en:"1943"},{ru:"1945 г.",en:"1945"}], correct:0,
+  ru:{text:"Прочитайте текст и укажите год, когда произошли события, о которых идёт речь.\n\nВоенный парад 7 ноября имел огромное значение. Он способствовал укреплению морального духа советского народа и его Вооружённых Сил, продемонстрировал решимость отстоять Москву и разгромить врага. Утреннее сообщение по радио 7 ноября для многих стало неожиданным.",
+      info:"Задание 17.", explanation:"Парад 7 ноября 1941 г. Ответ: 1."},
+  en:{text:"Read the text and indicate the year when the events described took place.\n\nThe military parade on 7 November was of great importance. It helped strengthen the morale of the Soviet people and their Armed Forces, demonstrated the determination to defend Moscow and defeat the enemy. The morning radio announcement on 7 November came as a surprise to many.",
+      info:"Task 17.", explanation:"The parade of 7 November 1941. Answer: 1."} },
+
+{ id:18, section:"history", type:"long", maxScore:2,
+  ru:{text:"Рассмотрите изображение и выполните задание.\n\n[Плакат «18 МАРТА. РОССИЯ – КРЫМ. МЫ ВМЕСТЕ!»]\n\nУкажите событие XXI в. из истории нашей страны, символом которого служит это изображение. В чём состоит значение этого события?",
+      info:"Задание 18 — развёрнутый ответ (2 балла).",
+      explanation:"ЭТАЛОН:\n1) Воссоединение Крыма с Россией (18 марта 2014 г.).\n2) Значение: крымчане получили возможность безопасно жить в России, говорить и учиться на родном языке, иметь стабильное будущее."},
+  en:{text:"Look at the image and complete the task.\n\n[Poster \"18 MARCH. RUSSIA – CRIMEA. WE ARE TOGETHER!\"]\n\nName the 21st-century event symbolised by this image. What is the significance of this event?",
+      info:"Task 18 — extended response (2 points).",
+      explanation:"MODEL:\n1) Reunification of Crimea with Russia (18 March 2014).\n2) Significance: Crimeans gained the opportunity to live safely in Russia, to speak and study in their native language, and to have a stable future."} },
+
+/* ---------- ОСНОВЫ ЗАКОНОДАТЕЛЬСТВА (19–36) ---------- */
+{ id:19, section:"law", type:"multi", maxScore:1, correctIndices:[0,2],
+  options:[{ru:"Гарантируется свободное перемещение товаров, услуг и финансовых средств на территории РФ.",en:"Free movement of goods, services and financial resources across RF is guaranteed."},
+           {ru:"Участниками регулируемых гражданским законодательством отношений являются граждане и организации.",en:"Participants in relations regulated by civil law are citizens and organisations."},
+           {ru:"Человек, его права и свободы являются высшей ценностью.",en:"Man, his rights and freedoms are the highest value."},
+           {ru:"Работодатель обязан вести учёт времени, фактически отработанного каждым работником.",en:"The employer must keep records of the time actually worked by each employee."}],
+  ru:{text:"Выберите две характеристики основ конституционного строя РФ.", info:"Задание 19 — несколько ответов (1 балл).", explanation:"Ответ: 13 или 31."},
+  en:{text:"Choose two characteristics of the foundations of the constitutional order of RF.", info:"Task 19 — multiple answers (1 point).", explanation:"Answer: 13 or 31."} },
+
+{ id:20, section:"law", type:"single", maxScore:1,
+  options:[{ru:"Органы законодательной, исполнительной и судебной власти самостоятельны.",en:"Legislative, executive and judicial authorities are independent."},
+           {ru:"В РФ устанавливается гарантированный минимальный размер оплаты труда.",en:"RF establishes a guaranteed minimum wage."},
+           {ru:"Все субъекты РФ равноправны между собой.",en:"All RF subjects are equal among themselves."}],
+  correct:1,
+  ru:{text:"Что характеризует РФ как социальное государство?", info:"Задание 20.", explanation:"Гарантированный МРОТ. Ответ: 2."},
+  en:{text:"What characterises RF as a social state?", info:"Task 20.", explanation:"Guaranteed minimum wage. Answer: 2."} },
+
+{ id:21, section:"law", type:"single", maxScore:1,
+  options:[{ru:"Судьи несменяемы.",en:"Judges are irremovable."},
+           {ru:"Общественные объединения равны перед законом.",en:"Public associations are equal before the law."},
+           {ru:"Президент РФ избирается сроком на шесть лет.",en:"The President of RF is elected for six years."}],
+  correct:2,
+  ru:{text:"Что характеризует РФ как государство с республиканской формой правления?", info:"Задание 21.", explanation:"Избрание Президента на 6 лет. Ответ: 3."},
+  en:{text:"What characterises RF as a state with a republican form of government?", info:"Task 21.", explanation:"Election of the President for 6 years. Answer: 3."} },
+
+{ id:22, section:"law", type:"multi", maxScore:2, correctIndices:[1,4,5],
+  options:[{ru:"Алекс получил образование, соответствующее уровню высшего образования в РФ.",en:"Alex received education corresponding to higher education level in RF."},
+           {ru:"Алекс постоянно проживает в РФ ... в течение пяти лет.",en:"Alex has permanently resided in RF ... for five years."},
+           {ru:"Алекс состоит в зарегистрированном браке, воспитывает детей.",en:"Alex is in a registered marriage and raises children."},
+           {ru:"Алекс планирует купить недвижимость в РФ.",en:"Alex plans to buy real estate in RF."},
+           {ru:"Алекс подтвердил знание истории России и основ законодательства РФ.",en:"Alex has confirmed knowledge of Russian history and RF legislation basics."},
+           {ru:"Алекс владеет русским языком.",en:"Alex has command of the Russian language."}],
+  ru:{text:"При каких условиях Алекс вправе подать заявление о приёме в гражданство РФ по общему правилу? Запишите три условия.", info:"Задание 22 — несколько ответов (2 балла).", explanation:"Ответ: 256."},
+  en:{text:"Under what conditions may Alex apply for admission to RF citizenship under the general rule? Write three conditions.", info:"Task 22 — multiple answers (2 points).", explanation:"Answer: 256."} },
+
+{ id:23, section:"law", type:"single", maxScore:1,
+  options:[{ru:"верно",en:"true"},{ru:"неверно",en:"false"}], correct:0,
+  ru:{text:"Проживание гражданина РФ за пределами РФ не прекращает его гражданства РФ. Верно ли это?", info:"Задание 23.", explanation:"Ответ: 1."},
+  en:{text:"A Russian citizen's residence outside RF does not terminate his/her citizenship. Is this correct?", info:"Task 23.", explanation:"Answer: 1."} },
+
+{ id:24, section:"law", type:"multi", maxScore:1, correctIndices:[0,3],
+  options:[{ru:"насильственные действия сексуального характера с особой жестокостью",en:"violent acts of a sexual nature with particular cruelty"},
+           {ru:"воспрепятствование осуществлению правосудия",en:"obstruction of justice"},
+           {ru:"посредничество во взяточничестве",en:"mediation in bribery"},
+           {ru:"оказание помощи противнику",en:"assistance to the enemy"}],
+  ru:{text:"Выберите два основания для прекращения гражданства РФ, полученного не по праву рождения.", info:"Задание 24 — несколько ответов (1 балл).", explanation:"Ответ: 14 или 41."},
+  en:{text:"Choose two grounds for termination of RF citizenship acquired not by birth.", info:"Task 24 — multiple answers (1 point).", explanation:"Answer: 14 or 41."} },
+
+{ id:25, section:"law", type:"single", maxScore:1,
+  options:[{ru:"трудового",en:"labour law"},{ru:"гражданского",en:"civil law"},{ru:"государственного",en:"state law"}], correct:1,
+  ru:{text:"Гражданка Л. взяла в банке кредит на покупку земельного участка. Нормами какого права регулируются её отношения с банком?", info:"Задание 25.", explanation:"Гражданское право. Ответ: 2."},
+  en:{text:"Citizen L. took a bank loan to buy a land plot. What law governs her relations with the bank?", info:"Task 25.", explanation:"Civil law. Answer: 2."} },
+
+{ id:26, section:"law", type:"single", maxScore:1,
+  options:[{ru:"Анна подарила сыну свой загородный дом.",en:"Anna gave her country house to her son."},
+           {ru:"Жерар имеет в собственности квартиру в России.",en:"Gerard owns an apartment in Russia."},
+           {ru:"Хасан на своём автомобиле выполняет работу курьера.",en:"Khasan uses his car to work as a courier."}],
+  correct:0,
+  ru:{text:"В какой ситуации собственник распорядился своим имуществом?", info:"Задание 26.", explanation:"Дарение — распоряжение. Ответ: 1."},
+  en:{text:"In which situation did the owner dispose of his/her property?", info:"Task 26.", explanation:"Gift — disposition. Answer: 1."} },
+
+{ id:27, section:"law", type:"single", maxScore:1,
+  options:[{ru:"нет",en:"no"},{ru:"да",en:"yes"},{ru:"да, если иностранный гражданин",en:"yes, if a foreign citizen"}], correct:0,
+  ru:{text:"Нужно ли обязательное образование юридического лица для предпринимательской деятельности в РФ?", info:"Задание 27.", explanation:"Нет, возможно ИП. Ответ: 1."},
+  en:{text:"Is it mandatory to form a legal entity to engage in entrepreneurial activity in RF?", info:"Task 27.", explanation:"No, sole proprietor is possible. Answer: 1."} },
+
+{ id:28, section:"law", type:"single", maxScore:1,
+  options:[{ru:"привлечения продавца к административной ответственности",en:"bringing the seller to administrative liability"},
+           {ru:"возврата средств или замены товара",en:"a refund or replacement of the goods"},
+           {ru:"бесплатной передачи товара",en:"free transfer of the goods"}],
+  correct:1,
+  ru:{text:"Гражданин А. купил пальто с разорванным рукавом. Он вправе потребовать", info:"Задание 28.", explanation:"Возврат или замена. Ответ: 2."},
+  en:{text:"Citizen A. bought a coat with a torn sleeve. He has the right to demand", info:"Task 28.", explanation:"Refund or replacement. Answer: 2."} },
+
+{ id:29, section:"law", type:"single", maxScore:1,
+  options:[{ru:"верно",en:"true"},{ru:"неверно",en:"false"}], correct:0,
+  ru:{text:"Условия оплаты труда обязательны для включения в трудовой договор в РФ. Верно ли это?", info:"Задание 29.", explanation:"Ответ: 1."},
+  en:{text:"Terms of remuneration are mandatory for inclusion in an employment contract in RF. Is this correct?", info:"Task 29.", explanation:"Answer: 1."} },
+
+{ id:30, section:"law", type:"single", maxScore:1,
+  options:[{ru:"своевременно и в полном объёме получать заработную плату",en:"to receive wages promptly and in full"},
+           {ru:"соблюдать трудовую дисциплину",en:"to observe labour discipline"},
+           {ru:"добросовестно исполнять трудовые функции",en:"to conscientiously perform labour functions"}],
+  correct:0,
+  ru:{text:"Какое право имеет работник в РФ?", info:"Задание 30.", explanation:"Право на зарплату. Ответ: 1."},
+  en:{text:"What right does an employee have in RF?", info:"Task 30.", explanation:"Right to wages. Answer: 1."} },
+
+{ id:31, section:"law", type:"single", maxScore:1,
+  options:[{ru:"желание работника",en:"the employee's wish"},
+           {ru:"истечение срока действия трудового договора",en:"expiry of the employment contract"},
+           {ru:"сокращение численности штата",en:"reduction in the number of employees"}],
+  correct:2,
+  ru:{text:"Что относится к основаниям прекращения трудового договора по инициативе работодателя?", info:"Задание 31.", explanation:"Сокращение штата. Ответ: 3."},
+  en:{text:"What refers to grounds for termination of an employment contract at the employer's initiative?", info:"Task 31.", explanation:"Reduction in staff. Answer: 3."} },
+
+{ id:32, section:"law", type:"single", maxScore:1,
+  options:[{ru:"конституционного",en:"constitutional law"},{ru:"административного",en:"administrative law"},{ru:"семейного",en:"family law"}], correct:2,
+  ru:{text:"Гражданка Н. оформила опекунство над несовершеннолетней племянницей. Нормами какого права регулируются эти отношения?", info:"Задание 32.", explanation:"Семейное право. Ответ: 3."},
+  en:{text:"Citizen N. took guardianship of her minor niece. What law governs these relations?", info:"Task 32.", explanation:"Family law. Answer: 3."} },
+
+{ id:33, section:"law", type:"long", maxScore:2,
+  ru:{text:"Магда и Франк решили заключить брачный договор. Включили пункты: о правах и обязанностях в отношении будущих детей; о взаимном содержании; о порядке несения семейных расходов; об обязанности согласовывать вопросы досуга. Нотариус указал исключить два пункта. О каких двух пунктах идёт речь? Объясните.",
+      info:"Задание 33 — развёрнутый ответ (2 балла).",
+      explanation:"ЭТАЛОН:\n1) Исключить: о правах и обязанностях в отношении будущих детей; об обязанности согласовывать вопросы досуга.\n2) Объяснение: брачный договор регулирует только имущественные отношения супругов."},
+  en:{text:"Magda and Frank decided to conclude a marriage contract. They included clauses on future children, mutual maintenance, family expenses, and leisure coordination. The notary said two clauses must be excluded. Which two? Explain.",
+      info:"Task 33 — extended response (2 points).",
+      explanation:"MODEL:\n1) Exclude: on rights and obligations regarding future children; on the obligation to coordinate leisure matters.\n2) Explanation: a marriage contract regulates only the property relations of spouses."} },
+
+{ id:34, section:"law", type:"single", maxScore:1,
+  options:[{ru:"верно",en:"true"},{ru:"неверно",en:"false"}], correct:1,
+  ru:{text:"Имущество, принадлежавшее каждому из супругов до брака, является общим имуществом супругов. Верно ли это?", info:"Задание 34.", explanation:"Добрачное имущество — личное. Ответ: 2."},
+  en:{text:"Property that belonged to each spouse before marriage is joint property. Is this correct?", info:"Task 34.", explanation:"Pre-marital property — personal. Answer: 2."} },
+
+{ id:35, section:"law", type:"single", maxScore:1,
+  options:[{ru:"Супруги прожили вместе более трёх лет.",en:"The spouses have lived together for more than three years."},
+           {ru:"У супругов есть общие несовершеннолетние дети.",en:"The spouses have common minor children."},
+           {ru:"Супруги ведут совместный бизнес.",en:"The spouses run a joint business."}],
+  correct:1,
+  ru:{text:"При каком условии расторжение брака возможно только в суде?", info:"Задание 35.", explanation:"При наличии общих несовершеннолетних детей. Ответ: 2."},
+  en:{text:"Under what condition can a marriage be dissolved only in court?", info:"Task 35.", explanation:"If there are common minor children. Answer: 2."} },
+
+{ id:36, section:"law", type:"single", maxScore:1,
+  options:[{ru:"верно",en:"true"},{ru:"неверно",en:"false"}], correct:0,
+  ru:{text:"Нарушение правил пересечения Государственной границы РФ влечёт административный штраф. Верно ли это?", info:"Задание 36.", explanation:"Ответ: 1."},
+  en:{text:"Violation of the rules for crossing the State Border of RF entails an administrative fine. Is this correct?", info:"Task 36.", explanation:"Answer: 1."} }
+],
+
+/* ==================== ВАРИАНТ D ==================== */
+D: [
+{ id:1, section:"history", type:"single", maxScore:1,
+  options:[{ru:"862 г.",en:"862"},{ru:"882 г.",en:"882"},{ru:"988 г.",en:"988"}], correct:0,
+  ru:{text:"Год образования государства Русь?", info:"Задание 1.", explanation:"862 г. Ответ: 1."},
+  en:{text:"Year of formation of the state of Rus?", info:"Task 1.", explanation:"862. Answer: 1."} },
+
+{ id:2, section:"history", type:"single", maxScore:1,
+  options:[{ru:"Владимир Красное Солнышко",en:"Vladimir the Red Sun"},{ru:"Ярослав Мудрый",en:"Yaroslav the Wise"},{ru:"Иван III",en:"Ivan III"}], correct:0,
+  ru:{text:"Кто крестил Русь?", info:"Задание 2.", explanation:"Владимир Красное Солнышко. Ответ: 1."},
+  en:{text:"Who baptized Rus?", info:"Task 2.", explanation:"Vladimir the Red Sun. Answer: 1."} },
+
+{ id:3, section:"history", type:"single", maxScore:1,
+  options:[{ru:"1242 г.",en:"1242"},{ru:"1237 г.",en:"1237"},{ru:"1380 г.",en:"1380"}], correct:0,
+  ru:{text:"Год Ледового побоища?", info:"Задание 3.", explanation:"1242 г. Ответ: 1."},
+  en:{text:"Year of the Battle on the Ice?", info:"Task 3.", explanation:"1242. Answer: 1."} },
+
+{ id:4, section:"history", type:"single", maxScore:1,
+  options:[{ru:"Дмитрий Донской",en:"Dmitry Donskoy"},{ru:"Александр Невский",en:"Alexander Nevsky"},{ru:"Иван Калита",en:"Ivan Kalita"}], correct:0,
+  ru:{text:"Кто командовал в Куликовской битве?", info:"Задание 4.", explanation:"Дмитрий Донской. Ответ: 1."},
+  en:{text:"Who commanded at the Battle of Kulikovo?", info:"Task 4.", explanation:"Dmitry Donskoy. Answer: 1."} },
+
+{ id:5, section:"history", type:"single", maxScore:1,
+  options:[{ru:"1480 г.",en:"1480"},{ru:"1380 г.",en:"1380"},{ru:"1242 г.",en:"1242"}], correct:0,
+  ru:{text:"Год «стояния» на Угре?", info:"Задание 5.", explanation:"1480 г. Ответ: 1."},
+  en:{text:"Year of the \"standing\" on the Ugra?", info:"Task 5.", explanation:"1480. Answer: 1."} },
+
+{ id:6, section:"history", type:"single", maxScore:1,
+  options:[{ru:"Иван IV Грозный",en:"Ivan IV the Terrible"},{ru:"Иван III",en:"Ivan III"},{ru:"Пётр I",en:"Peter I"}], correct:0,
+  ru:{text:"При ком созван первый Земский собор?", info:"Задание 6.", explanation:"Иван IV Грозный (1549). Ответ: 1."},
+  en:{text:"Under whom was the first Zemsky Sobor convened?", info:"Task 6.", explanation:"Ivan IV the Terrible (1549). Answer: 1."} },
+
+{ id:7, section:"history", type:"single", maxScore:1,
+  options:[{ru:"К. Минин и Д.М. Пожарский",en:"K. Minin and D.M. Pozharsky"},{ru:"А.Д. Меншиков и Пётр I",en:"A.D. Menshikov and Peter I"},{ru:"И.С. Конев и Г.К. Жуков",en:"I.S. Konev and G.K. Zhukov"}], correct:0,
+  ru:{text:"Кто возглавил ополчение 1612 года?", info:"Задание 7.", explanation:"Минин и Пожарский. Ответ: 1."},
+  en:{text:"Who led the militia of 1612?", info:"Task 7.", explanation:"Minin and Pozharsky. Answer: 1."} },
+
+{ id:8, section:"history", type:"single", maxScore:1,
+  options:[{ru:"Михаил Фёдорович",en:"Mikhail Fedorovich"},{ru:"Алексей Михайлович",en:"Alexey Mikhailovich"},{ru:"Пётр I",en:"Peter I"}], correct:0,
+  ru:{text:"Первый царь династии Романовых?", info:"Задание 8.", explanation:"Михаил Фёдорович. Ответ: 1."},
+  en:{text:"First tsar of the Romanov dynasty?", info:"Task 8.", explanation:"Mikhail Fedorovich. Answer: 1."} },
+
+{ id:9, section:"history", type:"single", maxScore:1,
+  options:[{ru:"Пётр I",en:"Peter I"},{ru:"Екатерина II",en:"Catherine II"},{ru:"Александр I",en:"Alexander I"}], correct:0,
+  ru:{text:"Кто основал Санкт-Петербург?", info:"Задание 9.", explanation:"Пётр I (1703). Ответ: 1."},
+  en:{text:"Who founded St Petersburg?", info:"Task 9.", explanation:"Peter I (1703). Answer: 1."} },
+
+{ id:10, section:"history", type:"single", maxScore:1,
+  options:[{ru:"Екатерина II",en:"Catherine II"},{ru:"Елизавета Петровна",en:"Elizabeth Petrovna"},{ru:"Анна Иоанновна",en:"Anna Ioannovna"}], correct:0,
+  ru:{text:"При ком Крым присоединён к России?", info:"Задание 10.", explanation:"Екатерина II (1783). Ответ: 1."},
+  en:{text:"Under whom was Crimea annexed to Russia?", info:"Task 10.", explanation:"Catherine II (1783). Answer: 1."} },
+
+{ id:11, section:"history", type:"long", maxScore:2,
+  ru:{text:"Назовите основные события правления Петра I (не менее трёх).",
+      info:"Задание 11 — развёрнутый ответ (2 балла).",
+      explanation:"ЭТАЛОН:\n1) 1700–1721 — Северная война.\n2) 1703 — основание Санкт-Петербурга.\n3) 1709 — Полтавская битва.\n4) 1721 — империя."},
+  en:{text:"Name the main events of Peter I's reign (at least three).",
+      info:"Task 11 — extended response (2 points).",
+      explanation:"MODEL:\n1) 1700–1721 — Great Northern War.\n2) 1703 — founding of St Petersburg.\n3) 1709 — Battle of Poltava.\n4) 1721 — empire."} },
+
+{ id:12, section:"history", type:"single", maxScore:1,
+  options:[{ru:"Александр I",en:"Alexander I"},{ru:"Николай I",en:"Nicholas I"},{ru:"Александр II",en:"Alexander II"}], correct:0,
+  ru:{text:"При ком была Отечественная война 1812 года?", info:"Задание 12.", explanation:"Александр I. Ответ: 1."},
+  en:{text:"Under whom was the Patriotic War of 1812?", info:"Task 12.", explanation:"Alexander I. Answer: 1."} },
+
+{ id:13, section:"history", type:"single", maxScore:1,
+  options:[{ru:"М.И. Кутузов",en:"M.I. Kutuzov"},{ru:"А.В. Суворов",en:"A.V. Suvorov"},{ru:"П.С. Нахимов",en:"P.S. Nakhimov"}], correct:0,
+  ru:{text:"Кто командовал в 1812 году?", info:"Задание 13.", explanation:"М.И. Кутузов. Ответ: 1."},
+  en:{text:"Who commanded in 1812?", info:"Task 13.", explanation:"M.I. Kutuzov. Answer: 1."} },
+
+{ id:14, section:"history", type:"single", maxScore:1,
+  options:[{ru:"Александр II",en:"Alexander II"},{ru:"Николай I",en:"Nicholas I"},{ru:"Александр III",en:"Alexander III"}], correct:0,
+  ru:{text:"При ком проведены Великие реформы?", info:"Задание 14.", explanation:"Александр II. Ответ: 1."},
+  en:{text:"Under whom were the Great Reforms carried out?", info:"Task 14.", explanation:"Alexander II. Answer: 1."} },
+
+{ id:15, section:"history", type:"single", maxScore:1,
+  options:[{ru:"1917 г.",en:"1917"},{ru:"1905 г.",en:"1905"},{ru:"1914 г.",en:"1914"}], correct:0,
+  ru:{text:"Год Российской революции?", info:"Задание 15.", explanation:"1917 г. Ответ: 1."},
+  en:{text:"Year of the Russian Revolution?", info:"Task 15.", explanation:"1917. Answer: 1."} },
+
+{ id:16, section:"history", type:"single", maxScore:1,
+  options:[{ru:"В.И. Ленин",en:"V.I. Lenin"},{ru:"И.В. Сталин",en:"I.V. Stalin"},{ru:"Н.С. Хрущёв",en:"N.S. Khrushchev"}], correct:0,
+  ru:{text:"Кто руководил Советской Россией в 1917–1924 гг.?", info:"Задание 16.", explanation:"В.И. Ленин. Ответ: 1."},
+  en:{text:"Who led Soviet Russia in 1917–1924?", info:"Task 16.", explanation:"V.I. Lenin. Answer: 1."} },
+
+{ id:17, section:"history", type:"single", maxScore:1,
+  options:[{ru:"1941–1945 гг.",en:"1941–1945"},{ru:"1939–1945 гг.",en:"1939–1945"},{ru:"1914–1918 гг.",en:"1914–1918"}], correct:0,
+  ru:{text:"Годы Великой Отечественной войны?", info:"Задание 17.", explanation:"1941–1945 гг. Ответ: 1."},
+  en:{text:"Years of the Great Patriotic War?", info:"Task 17.", explanation:"1941–1945. Answer: 1."} },
+
+{ id:18, section:"history", type:"long", maxScore:2,
+  ru:{text:"Не менее трёх героев Великой Отечественной войны.",
+      info:"Задание 18 — развёрнутый ответ (2 балла).",
+      explanation:"ЭТАЛОН:\n1) Г.К. Жуков.\n2) А.М. Матросов.\n3) З.А. Космодемьянская."},
+  en:{text:"At least three heroes of the Great Patriotic War.",
+      info:"Task 18 — extended response (2 points).",
+      explanation:"MODEL:\n1) G.K. Zhukov.\n2) A.M. Matrosov.\n3) Z.A. Kosmodemyanskaya."} },
+
+{ id:19, section:"law", type:"multi", maxScore:1, correctIndices:[0,2],
+  options:[{ru:"Гарантируется свободное перемещение товаров, услуг и финансовых средств на территории РФ.",en:"Free movement of goods, services and financial resources across RF is guaranteed."},
+           {ru:"Участниками отношений, регулируемых гражданским законодательством, являются граждане и организации.",en:"Participants in relations regulated by civil law are citizens and organisations."},
+           {ru:"Человек, его права и свободы являются высшей ценностью.",en:"Man, his rights and freedoms are the highest value."},
+           {ru:"Работодатель обязан вести учёт рабочего времени.",en:"The employer must keep records of working time."}],
+  ru:{text:"Выберите две характеристики основ конституционного строя РФ.", info:"Задание 19 — несколько ответов (1 балл).", explanation:"Ответ: 13 или 31."},
+  en:{text:"Choose two characteristics of the foundations of the constitutional order of RF.", info:"Task 19 — multiple answers (1 point).", explanation:"Answer: 13 or 31."} },
+
+{ id:20, section:"law", type:"single", maxScore:1,
+  options:[{ru:"Органы власти самостоятельны.",en:"Authorities are independent."},
+           {ru:"В РФ устанавливается гарантированный МРОТ.",en:"RF establishes a guaranteed minimum wage."},
+           {ru:"Все субъекты РФ равноправны.",en:"All RF subjects are equal."}],
+  correct:1,
+  ru:{text:"Что характеризует РФ как социальное государство?", info:"Задание 20.", explanation:"Гарантированный МРОТ. Ответ: 2."},
+  en:{text:"What characterises RF as a social state?", info:"Task 20.", explanation:"Guaranteed minimum wage. Answer: 2."} },
+
+{ id:21, section:"law", type:"single", maxScore:1,
+  options:[{ru:"Судьи несменяемы.",en:"Judges are irremovable."},
+           {ru:"Общественные объединения равны перед законом.",en:"Public associations are equal before the law."},
+           {ru:"Президент РФ избирается на шесть лет.",en:"The President of RF is elected for six years."}],
+  correct:2,
+  ru:{text:"Что характеризует РФ как республику?", info:"Задание 21.", explanation:"Избрание Президента на 6 лет. Ответ: 3."},
+  en:{text:"What characterises RF as a republic?", info:"Task 21.", explanation:"Election of the President for 6 years. Answer: 3."} },
+
+{ id:22, section:"law", type:"multi", maxScore:2, correctIndices:[1,4,5],
+  options:[{ru:"Алекс получил высшее образование в РФ.",en:"Alex received higher education in RF."},
+           {ru:"Алекс постоянно проживает в РФ ... в течение пяти лет.",en:"Alex has permanently resided in RF ... for five years."},
+           {ru:"Алекс состоит в браке, воспитывает детей.",en:"Alex is married and raises children."},
+           {ru:"Алекс планирует купить недвижимость.",en:"Alex plans to buy real estate."},
+           {ru:"Алекс подтвердил знание истории и законодательства РФ.",en:"Alex has confirmed knowledge of Russian history and RF legislation."},
+           {ru:"Алекс владеет русским языком.",en:"Alex has command of the Russian language."}],
+  ru:{text:"При каких условиях Алекс вправе подать заявление о приёме в гражданство РФ?", info:"Задание 22 — несколько ответов (2 балла).", explanation:"Ответ: 256."},
+  en:{text:"Under what conditions may Alex apply for admission to RF citizenship?", info:"Task 22 — multiple answers (2 points).", explanation:"Answer: 256."} },
+
+{ id:23, section:"law", type:"single", maxScore:1,
+  options:[{ru:"верно",en:"true"},{ru:"неверно",en:"false"}], correct:0,
+  ru:{text:"Проживание гражданина РФ за пределами РФ не прекращает его гражданства РФ.", info:"Задание 23.", explanation:"Ответ: 1."},
+  en:{text:"A Russian citizen's residence outside RF does not terminate his/her citizenship.", info:"Task 23.", explanation:"Answer: 1."} },
+
+{ id:24, section:"law", type:"multi", maxScore:1, correctIndices:[0,3],
+  options:[{ru:"насильственные действия сексуального характера с особой жестокостью",en:"violent acts of a sexual nature with particular cruelty"},
+           {ru:"воспрепятствование правосудию",en:"obstruction of justice"},
+           {ru:"посредничество во взяточничестве",en:"mediation in bribery"},
+           {ru:"оказание помощи противнику",en:"assistance to the enemy"}],
+  ru:{text:"Выберите два основания для прекращения гражданства РФ, полученного не по праву рождения.", info:"Задание 24 — несколько ответов (1 балл).", explanation:"Ответ: 14 или 41."},
+  en:{text:"Choose two grounds for termination of RF citizenship acquired not by birth.", info:"Task 24 — multiple answers (1 point).", explanation:"Answer: 14 or 41."} },
+
+{ id:25, section:"law", type:"single", maxScore:1,
+  options:[{ru:"трудового",en:"labour law"},{ru:"гражданского",en:"civil law"},{ru:"государственного",en:"state law"}], correct:1,
+  ru:{text:"Кредит на покупку участка — нормы какого права?", info:"Задание 25.", explanation:"Гражданское право. Ответ: 2."},
+  en:{text:"A loan for a land plot — what law?", info:"Task 25.", explanation:"Civil law. Answer: 2."} },
+
+{ id:26, section:"law", type:"single", maxScore:1,
+  options:[{ru:"Анна подарила сыну дом.",en:"Anna gave her house to her son."},
+           {ru:"Жерар имеет квартиру в России.",en:"Gerard owns an apartment in Russia."},
+           {ru:"Хасан работает курьером.",en:"Khasan works as a courier."}],
+  correct:0,
+  ru:{text:"Где собственник распорядился имуществом?", info:"Задание 26.", explanation:"Дарение. Ответ: 1."},
+  en:{text:"Where did the owner dispose of property?", info:"Task 26.", explanation:"Gift. Answer: 1."} },
+
+{ id:27, section:"law", type:"single", maxScore:1,
+  options:[{ru:"нет",en:"no"},{ru:"да",en:"yes"},{ru:"да, если иностранец",en:"yes, if a foreigner"}], correct:0,
+  ru:{text:"Нужно ли юрлицо для предпринимательства?", info:"Задание 27.", explanation:"Нет (ИП). Ответ: 1."},
+  en:{text:"Is a legal entity required for entrepreneurship?", info:"Task 27.", explanation:"No (sole proprietor). Answer: 1."} },
+
+{ id:28, section:"law", type:"single", maxScore:1,
+  options:[{ru:"административной ответственности продавца",en:"administrative liability of the seller"},
+           {ru:"возврата средств или замены товара",en:"a refund or replacement"},
+           {ru:"бесплатной передачи товара",en:"free transfer of goods"}],
+  correct:1,
+  ru:{text:"Купил пальто с разорванным рукавом. Вправе потребовать", info:"Задание 28.", explanation:"Возврат или замена. Ответ: 2."},
+  en:{text:"Bought a coat with a torn sleeve. Has the right to demand", info:"Task 28.", explanation:"Refund or replacement. Answer: 2."} },
+
+{ id:29, section:"law", type:"single", maxScore:1,
+  options:[{ru:"верно",en:"true"},{ru:"неверно",en:"false"}], correct:0,
+  ru:{text:"Условия оплаты труда обязательны для трудового договора в РФ?", info:"Задание 29.", explanation:"Ответ: 1."},
+  en:{text:"Are terms of remuneration mandatory for an employment contract in RF?", info:"Task 29.", explanation:"Answer: 1."} },
+
+{ id:30, section:"law", type:"single", maxScore:1,
+  options:[{ru:"своевременно и в полном объёме получать зарплату",en:"to receive wages promptly and in full"},
+           {ru:"соблюдать дисциплину",en:"to observe discipline"},
+           {ru:"исполнять трудовые функции",en:"to perform labour functions"}],
+  correct:0,
+  ru:{text:"Право работника в РФ?", info:"Задание 30.", explanation:"Право на зарплату. Ответ: 1."},
+  en:{text:"Employee's right in RF?", info:"Task 30.", explanation:"Right to wages. Answer: 1."} },
+
+{ id:31, section:"law", type:"single", maxScore:1,
+  options:[{ru:"желание работника",en:"the employee's wish"},
+           {ru:"истечение срока договора",en:"expiry of the contract"},
+           {ru:"сокращение штата",en:"reduction in staff"}],
+  correct:2,
+  ru:{text:"Что относится к основаниям прекращения договора по инициативе работодателя?", info:"Задание 31.", explanation:"Сокращение штата. Ответ: 3."},
+  en:{text:"What refers to grounds for termination at the employer's initiative?", info:"Task 31.", explanation:"Reduction in staff. Answer: 3."} },
+
+{ id:32, section:"law", type:"single", maxScore:1,
+  options:[{ru:"конституционного",en:"constitutional law"},{ru:"административного",en:"administrative law"},{ru:"семейного",en:"family law"}], correct:2,
+  ru:{text:"Опека над племянницей — нормы какого права?", info:"Задание 32.", explanation:"Семейное право. Ответ: 3."},
+  en:{text:"Guardianship of a niece — what law?", info:"Task 32.", explanation:"Family law. Answer: 3."} },
+
+{ id:33, section:"law", type:"long", maxScore:2,
+  ru:{text:"Магда и Франк заключают брачный договор. Включили пункты: о будущих детях; о взаимном содержании; о семейных расходах; о досуге. Нотариус указал исключить два пункта. Какие два и почему?",
+      info:"Задание 33 — развёрнутый ответ (2 балла).",
+      explanation:"ЭТАЛОН:\n1) Исключить: о будущих детях; о досуге.\n2) Объяснение: брачный договор регулирует только имущественные отношения."},
+  en:{text:"Magda and Frank conclude a marriage contract with clauses on future children, mutual maintenance, family expenses and leisure. The notary said two clauses must be excluded. Which two and why?",
+      info:"Task 33 — extended response (2 points).",
+      explanation:"MODEL:\n1) Exclude: on future children; on leisure.\n2) Explanation: a marriage contract regulates only property relations."} },
+
+{ id:34, section:"law", type:"single", maxScore:1,
+  options:[{ru:"верно",en:"true"},{ru:"неверно",en:"false"}], correct:1,
+  ru:{text:"Добрачное имущество является общим имуществом супругов. Верно ли это?", info:"Задание 34.", explanation:"Личное. Ответ: 2."},
+  en:{text:"Pre-marital property is joint property. Is this correct?", info:"Task 34.", explanation:"Personal. Answer: 2."} },
+
+{ id:35, section:"law", type:"single", maxScore:1,
+  options:[{ru:"прожили вместе более трёх лет",en:"lived together for more than three years"},
+           {ru:"есть общие несовершеннолетние дети",en:"there are common minor children"},
+           {ru:"ведут совместный бизнес",en:"run a joint business"}],
+  correct:1,
+  ru:{text:"При каком условии расторжение брака только в суде?", info:"Задание 35.", explanation:"При наличии общих несовершеннолетних детей. Ответ: 2."},
+  en:{text:"Under what condition is dissolution only in court?", info:"Task 35.", explanation:"If there are common minor children. Answer: 2."} },
+
+{ id:36, section:"law", type:"single", maxScore:1,
+  options:[{ru:"верно",en:"true"},{ru:"неверно",en:"false"}], correct:0,
+  ru:{text:"Нарушение правил пересечения госграницы РФ влечёт административный штраф. Верно ли это?", info:"Задание 36.", explanation:"Ответ: 1."},
+  en:{text:"Violation of the rules for crossing the RF state border entails an administrative fine. Is this correct?", info:"Task 36.", explanation:"Answer: 1."} }
+]
+};
+
+/* ============================================================
+   RENDER
+============================================================ */
+function renderStructureCards() {
+  document.getElementById("structureGrid").innerHTML = structureCards.map(card => {
+    const body = card.items ? `<ul class="mini-list">${card.items.map(it => `<li>${escapeHtml(loc(it))}</li>`).join("")}</ul>` : "";
+    return `<article class="card ${card.cardClass}"><span class="tag ${card.tagClass}">${escapeHtml(loc(card.tag))}</span><h3>${escapeHtml(loc(card.title))}</h3>${body}</article>`;
+  }).join("");
+}
+function renderRefRules() {
+  const L = I18N[currentLang];
+  document.getElementById("refRulesList").innerHTML = L.refRulesList.map(r => `<li>${escapeHtml(r)}</li>`).join("");
+}
+function renderReferences() {
+  const L = I18N[currentLang];
+  document.getElementById("refsGrid").innerHTML = `
+    <div class="card danger-card"><h3>${escapeHtml(L.refsScaleTitle)}</h3><table class="reference-table"><tr><th>${escapeHtml(L.refsScaleColPoints)}</th><th>${escapeHtml(L.refsScaleColResult)}</th></tr><tr><td>${escapeHtml(L.refsScalePass)}</td><td>${escapeHtml(L.refsScalePassLabel)}</td></tr><tr><td>${escapeHtml(L.refsScaleFail)}</td><td>${escapeHtml(L.refsScaleFailLabel)}</td></tr></table><p style="font-size:11px;margin-top:8px;color:var(--muted);">${escapeHtml(L.refsScaleNote)}</p></div>
+    <div class="card warn-card"><h3>${escapeHtml(L.refsPartsTitle)}</h3><table class="reference-table"><tr><th>${escapeHtml(L.refsPartsColPart)}</th><th>${escapeHtml(L.refsPartsColMax)}</th></tr><tr><td>${escapeHtml(L.refsPartHistory)}</td><td>20</td></tr><tr><td>${escapeHtml(L.refsPartLaw)}</td><td>20</td></tr><tr><td><strong>${escapeHtml(L.refsMax)}</strong></td><td><strong>40</strong></td></tr></table></div>
+    <div class="card success-card"><h3>${escapeHtml(L.refsTaskScoresTitle)}</h3><table class="reference-table"><tr><th>${escapeHtml(L.refsTaskScoresColTask)}</th><th>${escapeHtml(L.refsTaskScoresColScore)}</th></tr><tr><td>${escapeHtml(L.refsTask11)}</td><td>2</td></tr><tr><td>${escapeHtml(L.refsTask18)}</td><td>2</td></tr><tr><td>${escapeHtml(L.refsTask22)}</td><td>2</td></tr><tr><td>${escapeHtml(L.refsTask33)}</td><td>2</td></tr><tr><td>${escapeHtml(L.refsTaskOther)}</td><td>1</td></tr></table></div>
+    <div class="card"><h3>${escapeHtml(L.refsNormsTitle)}</h3><table class="reference-table"><tr><th>${escapeHtml(L.refsNormsColArea)}</th><th>${escapeHtml(L.refsNormsColAct)}</th></tr>
+    <tr><td>${escapeHtml(L.refsNormConstitution)}</td><td>${escapeHtml(L.refsNormConstitutionVal)}</td></tr>
+    <tr><td>${escapeHtml(L.refsNormCivil)}</td><td>${escapeHtml(L.refsNormCivilVal)}</td></tr>
+    <tr><td>${escapeHtml(L.refsNormLabor)}</td><td>${escapeHtml(L.refsNormLaborVal)}</td></tr>
+    <tr><td>${escapeHtml(L.refsNormFamily)}</td><td>${escapeHtml(L.refsNormFamilyVal)}</td></tr>
+    <tr><td>${escapeHtml(L.refsNormCitizenship)}</td><td>${escapeHtml(L.refsNormCitizenshipVal)}</td></tr>
+    <tr><td>${escapeHtml(L.refsNormMigration)}</td><td>${escapeHtml(L.refsNormMigrationVal)}</td></tr>
+    <tr><td>${escapeHtml(L.refsNormEntry)}</td><td>${escapeHtml(L.refsNormEntryVal)}</td></tr>
+    <tr><td>${escapeHtml(L.refsNormDocs)}</td><td>${escapeHtml(L.refsNormDocsVal)}</td></tr>
+    </table></div>`;
+}
+function renderVariantButtons() {
+  document.getElementById("variantButtons").innerHTML = VARIANTS.map(v =>
+    `<button class="variant-btn ${v === currentVariant ? "active" : ""}" onclick="setVariant('${v}')">${v}</button>`
+  ).join("");
+}
+function levelLabel(level) {
+  const L = I18N[currentLang];
+  if (level === "long") return L.levelLong;
+  return L.levelShort;
+}
+function sourceLabel(q) {
+  const L = I18N[currentLang];
+  const tpl = (q.type === "long" ? L.sourceLong : L.sourceShort) || "ФИПИ 2026, задание {task}";
+  return tpl.replace("{task}", q.id);
+}
+function getOptionText(opt) {
+  if (typeof opt === "string") return opt;
+  return opt[currentLang] || opt.ru || "";
+}
+function isQuestionAnswered(q) {
+  const a = getAnswer(q.id);
+  if (q.type === "single" || q.type === "single2") return typeof a === "string" && q.options.some(o => getOptionText(o) === a);
+  if (q.type === "multi") return Array.isArray(a) && a.length > 0;
+  if (q.type === "long") return typeof a === "string" && a.trim().length > 0;
+  return false;
+}
+function isQuestionCorrect(q) {
+  const a = getAnswer(q.id);
+  if (q.type === "single" || q.type === "single2") return typeof a === "string" && a === getOptionText(q.options[q.correct]);
+  if (q.type === "multi") {
+    if (!Array.isArray(a) || a.length === 0) return false;
+    const s = [...a].sort((x, y) => x - y).join(",");
+    const c = [...q.correctIndices].sort((x, y) => x - y).join(",");
+    return s === c;
+  }
+  return false;
+}
+function renderQuestions() {
+  const container = document.getElementById("quizContainer");
+  const L = I18N[currentLang];
+  const quiz = quizDB[currentVariant] || [];
+  container.innerHTML = "";
+
+  if (currentMode === "review") {
+    const wrongOnes = quiz.filter(q => isQuestionAnswered(q) && !isQuestionCorrect(q));
+    if (wrongOnes.length === 0) {
+      container.innerHTML = `<div class="summary"><p style="margin:0;font-size:20px;">${escapeHtml(L.reviewEmpty)}</p><p style="color:var(--muted);margin:8px 0 0;">${escapeHtml(L.reviewEmptyHint)}</p></div>`;
+      updateFilterLabels(); updateStats(); updateSummary(); return;
+    }
+  }
+
+  quiz.forEach(q => {
+    const block = document.createElement("div");
+    block.className = "question-block";
+    block.id = "q" + q.id;
+    block.dataset.section = q.section;
+    let trainerHtml = "";
+    const saved = getAnswer(q.id);
+    const isLocked = (currentMode === "training") && (saved !== undefined && isQuestionAnswered(q));
+
+    if (q.type === "single" || q.type === "single2") {
+      let opts = "";
+      q.options.forEach((opt, idx) => {
+        const optText = getOptionText(opt);
+        opts += `<button class="option" data-q="${q.id}" data-idx="${idx}" data-value="${escapeHtml(optText)}" ${isLocked ? "disabled" : ""} onclick="handleAnswer(${q.id}, ${idx})">${escapeHtml(optText)}</button>`;
+      });
+      trainerHtml = `<div class="options" id="options-${q.id}">${opts}</div>`;
+    } else if (q.type === "multi") {
+      let opts = "";
+      q.options.forEach((opt, idx) => {
+        const optText = getOptionText(opt);
+        const checked = Array.isArray(saved) && saved.includes(idx) ? "checked" : "";
+        opts += `<label class="option" data-q="${q.id}" data-idx="${idx}"><input type="checkbox" class="option-check" ${checked} ${isLocked ? "disabled" : ""} onchange="toggleMulti(${q.id}, ${idx})" /><span class="option-label">${escapeHtml(optText)}</span></label>`;
+      });
+      trainerHtml = `<div class="multi-hint">${escapeHtml(L.multiHint)}</div><div class="options" id="options-${q.id}">${opts}</div><button class="btn small" style="margin-top:10px;" ${isLocked ? "disabled" : ""} onclick="handleMulti(${q.id})">${escapeHtml(L.matchCheck)}</button>`;
+    } else if (q.type === "long") {
+      trainerHtml = `<div class="writing-area"><textarea id="solution_${q.id}" data-qid="${q.id}" placeholder="${currentLang === "ru" ? "Напиши свой ответ здесь..." : "Write your answer here..."}">${escapeHtml(saved || "")}</textarea></div><div style="margin-top:10px;"><button class="btn small secondary" onclick="toggleSolution(${q.id})">${escapeHtml(L.showSolution)}</button></div>`;
+    }
+    const tr = q[currentLang] || q.ru;
+    block.innerHTML = `<div class="q-number">${escapeHtml(levelLabel(q.type))}, ${currentLang === "ru" ? "задание" : "task"} ${q.id}</div><div class="q-part"><span class="q-part-label">${escapeHtml(L.questionLabel1)}</span><div class="q-text">${escapeHtml(tr.text)}</div></div><div class="q-info"><span class="q-part-label" style="color:var(--accent);">${escapeHtml(L.questionLabel2)}</span><p style="margin:0;">${escapeHtml(tr.info)}</p></div><div class="q-part"><span class="q-trainer-label">${escapeHtml(L.questionLabel3)}</span>${trainerHtml}</div><div id="result-${q.id}"></div>`;
+    container.appendChild(block);
+  });
+
+  container.querySelectorAll("textarea[data-qid]").forEach(ta => {
+    const qid = parseInt(ta.dataset.qid, 10);
+    ta.addEventListener("input", e => {
+      setAnswer(qid, e.target.value);
+      updateStats(); updateSummary();
+    });
+  });
+
+  quiz.forEach(q => {
+    const s = getAnswer(q.id);
+    if ((q.type === "single" || q.type === "single2") && typeof s === "string" && q.options.some(o => getOptionText(o) === s)) {
+      applyAnswerVisual(q, s);
+      if (currentMode === "training" || currentMode === "review") showResult(q, s);
+    }
+    if (q.type === "multi" && Array.isArray(s) && s.length > 0 && (currentMode === "training" || currentMode === "review")) {
+      showMultiResult(q, s);
+    }
+  });
+
+  updateFilterLabels();
+  applyFilter();
+  updateStats();
+  updateSummary();
+}
+function handleAnswer(qId, selectedIdx) {
+  const quiz = quizDB[currentVariant];
+  const q = quiz.find(item => item.id === qId);
+  if (!q) return;
+  const existing = getAnswer(qId);
+  if (existing !== undefined && currentMode === "training") return;
+  const selectedValue = getOptionText(q.options[selectedIdx]);
+  setAnswer(qId, selectedValue);
+  applyAnswerVisual(q, selectedValue);
+  showResult(q, selectedValue);
+  updateStats(); updateSummary();
+}
+function toggleMulti(qId, idx) {
+  const quiz = quizDB[currentVariant];
+  const q = quiz.find(item => item.id === qId);
+  if (!q) return;
+  if (currentMode === "training" && isQuestionAnswered(q)) return;
+  let current = getAnswer(qId);
+  if (!Array.isArray(current)) current = [];
+  if (current.includes(idx)) current = current.filter(i => i !== idx);
+  else current.push(idx);
+  setAnswer(qId, current);
+  updateStats(); updateSummary();
+}
+function handleMulti(qId) {
+  const quiz = quizDB[currentVariant];
+  const q = quiz.find(item => item.id === qId);
+  if (!q) return;
+  const a = getAnswer(qId);
+  if (!Array.isArray(a) || a.length === 0) return;
+  showMultiResult(q, a);
+  updateStats(); updateSummary();
+}
+function showMultiResult(q, selected) {
+  const resultBox = document.getElementById("result-" + q.id);
+  if (!resultBox) return;
+  const L = I18N[currentLang];
+  const isCorrect = isQuestionCorrect(q);
+  const correctDisplay = q.correctIndices.map(i => i + 1).join("");
+  resultBox.innerHTML = `<div class="result-block ${isCorrect ? "correct" : "wrong"}"><div class="verdict ${isCorrect ? "correct" : "wrong"}">${escapeHtml(isCorrect ? L.resultCorrect : L.resultWrong)}</div><div class="result-row"><strong>${escapeHtml(L.correctAnswer)}</strong> ${escapeHtml(correctDisplay)}</div><div class="result-row"><strong>${escapeHtml(L.explanation)}</strong> ${escapeHtml((q[currentLang] || q.ru).explanation)}</div><div class="source-row"><strong>${escapeHtml(L.source)}</strong> ${escapeHtml(sourceLabel(q))}</div></div>`;
+  const optionsBox = document.getElementById("options-" + q.id);
+  if (optionsBox) {
+    optionsBox.querySelectorAll(".option").forEach((el, idx) => {
+      const check = el.querySelector(".option-check");
+      if (check) check.disabled = true;
+      if (q.correctIndices.includes(idx)) el.classList.add("correct");
+      if (selected.includes(idx) && !q.correctIndices.includes(idx)) el.classList.add("wrong");
+    });
+  }
+}
+function applyAnswerVisual(q, selectedValue) {
+  const optionsBox = document.getElementById("options-" + q.id);
+  if (!optionsBox) return;
+  const correctValue = getOptionText(q.options[q.correct]);
+  optionsBox.querySelectorAll(".option").forEach(btn => {
+    btn.disabled = true;
+    const value = btn.dataset.value;
+    if (value === correctValue) btn.classList.add("correct");
+    if (value === selectedValue && selectedValue !== correctValue) btn.classList.add("wrong");
+  });
+}
+function showResult(q, selectedValue) {
+  const resultBox = document.getElementById("result-" + q.id);
+  if (!resultBox) return;
+  const L = I18N[currentLang];
+  const tr = q[currentLang] || q.ru;
+  const correctValue = getOptionText(q.options[q.correct]);
+  const isCorrect = selectedValue === correctValue;
+  resultBox.innerHTML = `<div class="result-block ${isCorrect ? "correct" : "wrong"}"><div class="verdict ${isCorrect ? "correct" : "wrong"}">${escapeHtml(isCorrect ? L.resultCorrect : L.resultWrong)}</div><div class="result-row"><strong>${escapeHtml(L.correctAnswer)}</strong> ${escapeHtml(correctValue)}</div><div class="result-row"><strong>${escapeHtml(L.explanation)}</strong> ${escapeHtml(tr.explanation)}</div><div class="source-row"><strong>${escapeHtml(L.source)}</strong> ${escapeHtml(sourceLabel(q))}</div></div>`;
+}
+function toggleSolution(qId) {
+  const quiz = quizDB[currentVariant];
+  const q = quiz.find(item => item.id === qId);
+  if (!q) return;
+  const resultBox = document.getElementById("result-" + qId);
+  const L = I18N[currentLang];
+  const isHidden = !resultBox.innerHTML || resultBox.innerHTML.trim() === "";
+  if (isHidden) resultBox.innerHTML = `<div class="result-block correct"><div class="verdict correct">📖 ${escapeHtml(L.explanation)}</div><div class="result-row" style="white-space:pre-wrap;">${escapeHtml((q[currentLang] || q.ru).explanation)}</div></div>`;
+  else resultBox.innerHTML = "";
+}
+function setFilter(filter, btn) {
+  currentFilter = filter;
+  document.querySelectorAll(".filter-btn").forEach(b => b.classList.remove("active"));
+  if (btn) btn.classList.add("active");
+  applyFilter();
+}
+function applyFilter() {
+  const quiz = quizDB[currentVariant] || [];
+  quiz.forEach(q => {
+    const block = document.getElementById("q" + q.id);
+    if (!block) return;
+    let show = true;
+    if (currentFilter === "history") show = q.section === "history";
+    else if (currentFilter === "law") show = q.section === "law";
+    block.style.display = show ? "" : "none";
+  });
+}
+function updateFilterLabels() {
+  const L = I18N[currentLang];
+  const quiz = quizDB[currentVariant] || [];
+  document.getElementById("filterAll").textContent = `${L.filterAll} (${quiz.length})`;
+  document.getElementById("filterHistory").textContent = `${L.filterHistory} (${quiz.filter(q => q.section === "history").length})`;
+  document.getElementById("filterLaw").textContent = `${L.filterLaw} (${quiz.filter(q => q.section === "law").length})`;
+}
+function updateStats() {
+  const quiz = quizDB[currentVariant] || [];
+  const total = quiz.length;
+  let answered = 0, correct = 0, primary = 0;
+  quiz.forEach(q => {
+    if (isQuestionAnswered(q)) answered++;
+    if (isQuestionCorrect(q)) { correct++; primary += q.maxScore || 1; }
+  });
+  document.getElementById("answeredCount").textContent = answered + "/" + total;
+  document.getElementById("correctCount").textContent = correct;
+  document.getElementById("primaryScore").textContent = primary + "/40";
+  document.getElementById("overall").value = Math.round(answered / total * 100);
+}
+function updateSummary() {
+  const box = document.getElementById("summaryBox");
+  const L = I18N[currentLang];
+  const quiz = quizDB[currentVariant] || [];
+  const total = quiz.length;
+  const totalAuto = quiz.filter(q => q.type !== "long").length;
+  let answered = 0, correct = 0, answeredAuto = 0;
+  quiz.forEach(q => {
+    if (isQuestionAnswered(q)) {
+      answered++;
+      if (q.type !== "long") { answeredAuto++; if (isQuestionCorrect(q)) correct++; }
+    }
+  });
+  if (answered < total) {
+    box.innerHTML = `<div class="summary"><p style="margin:0;color:var(--muted);">${escapeHtml(L.summaryAnswered)} <strong>${answered}</strong> ${escapeHtml(L.summaryOf)} ${total}</p><p style="margin:8px 0 0;color:var(--muted);">${escapeHtml(L.summaryCorrect)} <strong>${correct}</strong> / ${answeredAuto} ${escapeHtml(L.summaryOf)} ${totalAuto}</p><p style="margin:8px 0 0;color:var(--muted);font-size:13px;">${escapeHtml(L.summaryFinish)}</p></div>`;
+    return;
+  }
+  const pct = totalAuto ? Math.round((correct / totalAuto) * 100) : 0;
+  const verdict = pct >= 85 ? L.verdictExcellent : pct >= 60 ? L.verdictGood : L.verdictNeeds;
+  box.innerHTML = `<div class="summary"><div class="score">${correct}/${totalAuto}</div><p style="margin:8px 0;">${escapeHtml(verdict)}</p><p style="color:var(--muted);margin:0;">${escapeHtml(L.summaryCorrect)} ${pct}%</p></div>`;
+}
+
+/* ============================================================
+   MODE / VARIANT
+============================================================ */
+function setVariant(v) { currentVariant = v; renderVariantButtons(); renderQuestions(); }
+function setMode(mode, btn) {
+  currentMode = mode;
+  document.querySelectorAll(".mode-btn").forEach(b => b.classList.remove("active"));
+  if (btn) btn.classList.add("active");
+  renderQuestions();
+}
+function resetVariant() {
+  if (!confirm(I18N[currentLang].resetConfirm)) return;
+  const quiz = quizDB[currentVariant] || [];
+  quiz.forEach(q => { delete savedAnswers[answerKey(q.id)]; });
+  renderQuestions();
+}
+
+/* ============================================================
+   THEME / LANG
+============================================================ */
+function applyTheme() {
+  document.documentElement.setAttribute("data-theme", currentTheme);
+  const icon = document.getElementById("themeIcon");
+  if (icon) icon.textContent = currentTheme === "dark" ? "🌙" : "☀️";
+}
+function toggleTheme() { currentTheme = currentTheme === "dark" ? "light" : "dark"; applyTheme(); }
+function applyUIText() {
+  const L = I18N[currentLang];
+  document.title = L.docTitle;
+  document.documentElement.lang = currentLang;
+  document.querySelectorAll("[data-i18n]").forEach(el => {
+    const key = el.dataset.i18n;
+    if (L[key] != null) el.innerHTML = L[key];
+  });
+}
+function setLang(lang) {
+  currentLang = lang;
+  document.querySelectorAll(".lang-option").forEach(sp => sp.classList.toggle("active", sp.dataset.lang === lang));
+  applyUIText(); renderAll();
+}
+
+/* ============================================================
+   TIMER (90 минут)
+============================================================ */
+let timerTotal = 90 * 60, timerRemaining = timerTotal, timerInterval = null, timerRunning = false;
+function formatTime(sec) { const h = Math.floor(sec / 3600), m = Math.floor((sec % 3600) / 60), s = sec % 60; return [h, m, s].map(v => String(v).padStart(2, "0")).join(":"); }
+function updateTimerDisplay() { const d = document.getElementById("timerDisplay"); const w = document.getElementById("timerWidget"); d.textContent = formatTime(timerRemaining); w.classList.toggle("warning", timerRemaining <= 300 && timerRemaining > 60); w.classList.toggle("danger", timerRemaining <= 60); }
+function updateTimerButton() { document.getElementById("timerToggle").textContent = timerRunning ? "⏸" : "▶"; }
+function stopTimer() { timerRunning = false; if (timerInterval) clearInterval(timerInterval); timerInterval = null; updateTimerButton(); }
+function startTimer() { if (timerRunning || timerRemaining <= 0) return; timerRunning = true; timerInterval = setInterval(() => { if (timerRemaining > 0) { timerRemaining--; updateTimerDisplay(); } if (timerRemaining === 0) { stopTimer(); alert(I18N[currentLang].timerUp); } }, 1000); updateTimerButton(); }
+function toggleTimer() { timerRunning ? stopTimer() : startTimer(); }
+function resetTimer() { stopTimer(); timerRemaining = timerTotal; updateTimerDisplay(); }
+
+/* ============================================================
+   EXPORT / COPY
+============================================================ */
+function exportResults() {
+  const L = I18N[currentLang];
+  const quiz = quizDB[currentVariant] || [];
+  const total = quiz.length;
+  const totalAuto = quiz.filter(q => q.type !== "long").length;
+  let answered = 0, correct = 0, answeredAuto = 0, primary = 0;
+  quiz.forEach(q => {
+    if (isQuestionAnswered(q)) { answered++; if (q.type !== "long") answeredAuto++; }
+    if (isQuestionCorrect(q)) { correct++; primary += q.maxScore || 1; }
+  });
+  let lines = [];
+  lines.push("=== Анти-ИИ Квен Академия • История России и законодательство РФ • 2026 ===");
+  lines.push("Дата: " + new Date().toLocaleString());
+  lines.push("Вариант: " + currentVariant + " | Режим: " + currentMode);
+  lines.push("");
+  lines.push("Ответов: " + answered + " / " + total);
+  lines.push("Автопроверяемых: " + answeredAuto + " / " + totalAuto);
+  lines.push("Правильных (авто): " + correct);
+  lines.push("Первичных баллов (авто): " + primary + " / 40");
+  lines.push("");
+  lines.push("=== ОТВЕТЫ ===");
+  quiz.forEach(q => {
+    let a = getAnswer(q.id);
+    if (Array.isArray(a)) a = a.map(i => i + 1).join(",");
+    a = a || "—";
+    const isAuto = q.type !== "long";
+    const ok = isAuto ? (isQuestionCorrect(q) ? "✓" : (isQuestionAnswered(q) ? "✗" : "·")) : (isQuestionAnswered(q) ? "M" : "·");
+    lines.push(`[${ok}] Задание ${q.id} (${q.section}): ${String(a).slice(0, 120)}`);
+  });
+  lines.push("");
+  lines.push("ПОРОГ: 28 из 40, история ≥ 12, законодательство ≥ 12.");
+  const blob = new Blob([lines.join("\n")], { type: "text/plain;charset=utf-8" });
+  const url = URL.createObjectURL(blob);
+  const a2 = document.createElement("a");
+  a2.href = url;
+  a2.download = `anti-ai-qwen-history-law-${currentVariant}-${Date.now()}.txt`;
+  document.body.appendChild(a2); a2.click(); document.body.removeChild(a2);
+  URL.revokeObjectURL(url);
+  const status = document.getElementById("copyStatus");
+  if (status) { status.textContent = L.exportDone; setTimeout(() => status.textContent = "", 2500); }
+}
+function copyPhone() {
+  const phone = "89202275676";
+  const status = document.getElementById("copyStatus");
+  const L = I18N[currentLang];
+  const show = () => { status.textContent = L.copied; setTimeout(() => status.textContent = "", 2500); };
+  if (navigator.clipboard && window.isSecureContext) navigator.clipboard.writeText(phone).then(show).catch(() => fallbackCopy(phone, show));
+  else fallbackCopy(phone, show);
+}
+function fallbackCopy(text, cb) {
+  const t = document.createElement("textarea"); t.value = text; t.style.position = "fixed"; t.style.opacity = "0";
+  document.body.appendChild(t); t.focus(); t.select();
+  try { document.execCommand("copy"); cb(); } catch (e) { alert(I18N[currentLang].copyFail + text); }
+  document.body.removeChild(t);
+}
+
+/* ============================================================
+   INIT
+============================================================ */
+function renderAll() {
+  renderStructureCards(); renderRefRules(); renderReferences();
+  renderVariantButtons(); renderQuestions();
+  updateStats(); updateSummary();
+}
+document.addEventListener("DOMContentLoaded", () => {
+  applyTheme();
+  applyUIText();
+  renderAll();
+  updateTimerDisplay();
+  document.querySelectorAll(".mode-btn").forEach(b => b.classList.toggle("active", b.dataset.mode === currentMode));
+  document.getElementById("themeToggle").addEventListener("click", toggleTheme);
+  document.getElementById("langToggle").addEventListener("click", () => setLang(currentLang === "ru" ? "en" : "ru"));
+  document.getElementById("timerToggle").addEventListener("click", toggleTimer);
+  document.getElementById("timerReset").addEventListener("click", resetTimer);
+});
+</script>
+</body>
+</html>
